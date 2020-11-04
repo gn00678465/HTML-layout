@@ -1,0 +1,198 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  font-size: 16px;
+  font-style: italic;
+  --dot: #891818;
+}
+
+// virable
+$directions: (
+	t: top,
+	r: right,
+	b: bottom,
+	l: left
+);
+
+@mixin text($size, $weight, $line-height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@for $i from 1 through 8 {
+	$base: 0.5rem;
+	@each $key, $val in $directions {
+		.m-#{$i} {
+			margin: $base * $i;
+		}
+		.p-#{$i} {
+			padding: $base * $i;
+		}
+		.m#{$key}-#{$i} {
+			margin-#{$val}: $base * $i;
+		}
+		.p#{$key}-#{$i} {
+			padding-#{$val}: $base * $i;
+		}
+		.mx-#{$i} {
+			margin-left: $base * $i;
+			margin-right: $base * $i;
+		}
+		.my-#{$i} {
+			margin-top: $base * $i;
+			margin-bottom: $base * $i;
+		}
+		.px-#{$i} {
+			padding-left: $base * $i;
+			padding-right: $base * $i;
+		}
+		.py-#{$i} {
+			padding-top: $base * $i;
+			padding-bottom: $base * $i;
+		}
+	}
+}
+
+// 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 958px;
+  background-image: url('https://github.com/hexschool/webLayoutTraining1st/blob/master/week2/banner.png?raw=true');
+  background-position: center;
+  background-size: cover;
+  .content {
+    color: #ffffff;
+  }
+  .title {
+    @include text(5rem, 900, 94px);
+  }
+  .subtitle {
+    @include text(1.5rem, 700, 28px);
+  }
+  .intro {
+    @include text(1.5rem, 700, 36px);
+  }
+  .social {
+    display: flex;
+  }
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.about,
+.brand,
+.works,
+.contact {
+  &-title {
+    @include text(4rem, 500, 65px);
+  }
+}
+
+.brand,
+.contact {
+  background: #000;
+  color: #ffffff;
+}
+
+.about {
+  &-img {
+    width: 384px;
+    height: 384px;
+    display: inline-block;
+  }
+  .separator {
+    width: 384px;
+  }
+  .profile-item,
+  .detial-item {
+    @include text(1.5rem, 700, 42px);
+  }
+  .profile-item:last-child {
+    line-height: 36px;
+  }
+  .dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--dot);
+    display: inline-block;
+  }
+}
+
+.brand {
+  padding-bottom: 10rem;
+  &-intro {
+    @include text(1.5rem, 500, 28px);
+  }
+  &-content {
+    @include text(1.25rem, 500, 30px);
+    font-style: normal;
+    margin-bottom: 4.25rem;
+  }
+  i {
+    font-style: italic;
+  }
+  &-imgs {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+
+.works {
+  margin-bottom: 10rem;
+  &-content {
+    @include text(1.25rem, 500, 30px);
+    font-style: normal;
+  }
+  .work-content {
+    @include text(1.25rem, 500, 42px);
+    font-style: normal;
+  }
+  i {
+    font-style: italic;
+  }
+  &-list {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+.contact {
+  padding-bottom: 5rem;
+  .contact-item {
+    @include text(1.5rem, 500, 36px);
+  }
+}

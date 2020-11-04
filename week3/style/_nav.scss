@@ -1,0 +1,41 @@
+.nav {
+  padding: 30px 88px;
+  .item {
+    margin-right: 4rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .link {
+    @include text-size(20px);
+    line-height: 1.5;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 30px 39px;
+  }
+}
+
+@media (max-width: 375px) {
+  .nav {
+    display: block;
+    text-align: center;
+    padding: 0;
+    .logo {
+      padding: 10px 0;
+      width: 48px;
+    }
+    .item {
+      margin-right: 0;
+      flex-basis: 50%;
+      border: 1px solid #fff;
+    }
+    .link {
+      padding: 8px 0;
+    }
+  }
+}

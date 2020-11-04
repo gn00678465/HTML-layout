@@ -1,0 +1,114 @@
+@function px2rem($px){
+  @return $px / 16px * 1rem;
+}
+
+@function calcSpace($num, $base) {
+  @if($num < 6) {
+      @return ($num * $space-base) + $space-base
+  } @else {
+      @return (($num - 5) * 2 + 5) * $space-base + $space-base
+  }
+}
+
+@mixin text-size($size) {
+  font-size: px2rem($size);
+}
+
+@mixin RWD($width) {
+  @media (max-width: $width) {
+    @content
+  }
+};
+
+@mixin colCalc($breakpoint: null) {
+  @for $i from 0 through $grid-count {
+    @if ($i == 0) {
+      .col {
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        position: relative;
+      }
+    }  @else {
+        .col-#{$breakpoint}#{$i} {
+        position: relative;
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+        flex: 0 0 ($i / $grid-count) * 100%;
+        max-width: ($i / $grid-count) * 100%;
+      }
+    }
+  }
+}
+
+@mixin generatorFlexProperty($breakpoint: null) {
+  @each $key, $val in $flex-properties {
+    .align-items-#{$breakpoint}#{$key} {
+      align-items: $val;
+    }
+    @if ($key == stretch or $key == baseline) {
+    } @else {
+      .justify-content-#{$breakpoint}#{$key} {
+        justify-content: $val;
+      }
+    }
+  };
+}
+
+@mixin generatorColors($breakpoint: null) {
+  @each $key, $val in $colors {
+    @if ($breakpoint == null) {
+      .text-#{$key} {
+        color: $val
+      }
+      .bg-#{$key} {
+        background: $val;
+      }
+    } @else {
+      .text-#{$breakpoint}#{$key} {
+        color: $val;
+      }
+    }
+  };
+}
+
+@mixin generatorSpace($num, $breakpoint: null) {
+  @for $i from 1 through $num {
+    .m-#{$breakpoint}#{$i} {
+      margin: calcSpace($i, $space-base);
+    }
+    .p-#{$breakpoint}#{$i} {
+      padding: calcSpace($i, $space-base);
+    }
+    @each $key, $val in $directions {
+      .m#{$key}-#{$breakpoint}#{$i} {
+        margin-#{$val}: calcSpace($i, $space-base);
+      }
+      .p#{$key}-#{$breakpoint}#{$i} {
+        padding-#{$val}: calcSpace($i, $space-base);
+      }
+      @if ($key == t or $key == b) {
+        .my-#{$breakpoint}#{$i} {
+          margin-top: calcSpace($i, $space-base);
+          margin-bottom: calcSpace($i, $space-base);
+        }
+        .py-#{$breakpoint}#{$i} {
+          padding-top: calcSpace($i, $space-base);
+          padding-bottom: calcSpace($i, $space-base);
+        }
+      }
+      @if ($key == r or $key == l) {
+        .mx-#{$breakpoint}#{$i} {
+          margin-right: calcSpace($i, $space-base);
+          margin-left: calcSpace($i, $space-base);
+        }
+        .px-#{$breakpoint}#{$i} {
+          padding-right: calcSpace($i, $space-base);
+          padding-left: calcSpace($i, $space-base);
+        }
+      }
+    }
+  }
+}

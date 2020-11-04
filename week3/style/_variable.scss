@@ -1,0 +1,36 @@
+$gutter: 30px !default;
+$grid-count : 12 !default;
+$space: 10px !default;
+$space-base: 4px;
+
+$directions: (
+	t: top,
+	r: right,
+	b: bottom,
+	l: left
+);
+
+$flex-properties: (
+  start: flex-start,
+  end: flex-end,
+	center: center,
+	around: space-around,
+	between: space-between,
+	baseline: baseline,
+	stretch: stretch
+);
+
+$colors: (
+	primary: #650300,
+	secondary: #111619,
+	tertiary: #AA0601,
+	light: #FBF2F2,
+	white: white,
+	black: black,
+);
+
+$font-weights: (
+	regular: 400,
+	bold: 700,
+	black: 900,
+);

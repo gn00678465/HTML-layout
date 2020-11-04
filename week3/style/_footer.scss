@@ -1,0 +1,147 @@
+.footer {
+  padding-top: 36px;
+  padding-bottom: 28px;
+  .info {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+  }
+  .item {
+    margin-right: 48px;
+  }
+  .item:last-child {
+    margin-bottom: 0;
+  }
+  .link {
+    @include text-size(16px);
+    line-height: 1.5;
+  }
+  .social {
+    &__item:nth-child(-n+2) {
+      margin-right: 32px;
+    }
+  }
+  .contact {
+    margin-top: 18px;
+  }
+  .tel {
+    margin-bottom: 17px;
+  }
+  .tel,
+  .mail {
+    @include text-size(36px);
+    line-height: 1.5;
+  }
+  .tel .icon {
+    margin-right: 20px;
+  }
+  .mail .icon {
+    margin-right: 14px;
+  }
+  .copyright {
+    margin-top: 20px;
+    .logo {
+      display: inline-block;
+      margin-right: 38px;
+    }
+    &__text {
+      display: inline-block;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    &__link {
+      margin-right: 62px;
+      @include text-size(14px);
+      line-height: 1.5;
+    }
+    &__link:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0;
+    .info {
+      padding-bottom: 24px;
+    }
+    .social {
+      &__item:nth-child(-n+2) {
+        margin-right: 24px;
+      }
+      &__item {
+        width: 24px;
+      }
+    }
+    .contact {
+      margin-top: 24px;
+    }
+    .tel,
+    .mail {
+      @include text-size(20px);
+    }
+    .tel {
+      margin-bottom: 11px;
+    }
+    .tel .icon {
+      margin-right: 15px;
+    }
+    .mail .icon {
+      margin-right: 10px;
+    }
+    .copyright {
+      margin-top: 24px;
+      .logo {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .footer {
+    padding: 24px 15px;
+    .menu {
+      display: none;
+    }
+    .contact {
+      margin-top: 0;
+      order: -1;
+    }
+    .tel,
+    .mail {
+      font-size: 1rem;
+    }
+    .tel .icon {
+      margin-right: 7px;
+    }
+    .mail .icon {
+      margin-right: 7px;
+    }
+    .tel {
+      margin-bottom: 7px;
+    }
+    .copyright {
+      margin-top: 18px;
+      flex-direction: column;
+      align-items: start;
+      position: relative;
+      .logo {
+        display: block;
+        position: absolute;
+        width: 46px;
+        right: 0;
+        bottom: 0;
+        margin-right: 0;
+      }
+      &__text,
+      &__link {
+        @include text-size(14px);
+        margin-bottom: 7px;
+      }
+      &__link:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

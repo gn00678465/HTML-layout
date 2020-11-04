@@ -1,0 +1,44 @@
+.location {
+  margin-top: 16px;
+  margin-bottom: 304px;
+}
+
+.form-inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .label {
+    @include text-size(24px);
+    line-height: 1.5;
+  }
+  .select {
+    flex: 0 0 324px;
+    padding: 10px 19px;
+    color: #495057;
+    @include text-size(18px);
+    line-height: 24px;
+  }
+  @include RWD(768px) {
+    .label {
+      @include text-size(16px);
+    }
+    .select {
+      flex: 0 0 237px;
+      padding: 12px 16px;
+      @include text-size(16px);
+      line-height: 1.5;
+    }
+  }
+  @include RWD(375px) {
+    .label {
+      @include text-size(16px);
+      line-height: 20px;
+    }
+    .select {
+      flex: 1 0 0;
+      padding: 8px 16px;
+      @include text-size(14px);
+      line-height: 20px;
+    }
+  }
+}

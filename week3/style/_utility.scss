@@ -1,0 +1,33 @@
+// utility
+
+@include colCalc();
+@include generatorFlexProperty();
+@include generatorColors();
+@include generatorSpace(10);
+
+@include RWD(768px) {
+  @include colCalc(md-);
+  @include generatorFlexProperty(md-);
+  @include generatorColors(md-);
+  @include generatorSpace(10, md-);
+};
+
+@include RWD(375px) {
+  @include colCalc(sm-);
+  @include generatorFlexProperty(sm-);
+  @include generatorColors(sm-);
+  @include generatorSpace(10, sm-);
+};
+
+@each $key, $val in $font-weights {
+  .font-#{$key} {
+    font-weight: $val;
+  }
+};
+
+// margin padding
+@each $key, $val in $directions {
+  .m#{$key}-auto {
+    margin-#{$val}: auto;
+  }
+};

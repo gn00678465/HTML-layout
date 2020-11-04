@@ -1,0 +1,98 @@
+.banner {
+  height: 304px;
+  background-image: url('https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/qa.png?raw=true');
+  background-size: cover;
+  background-position: center;
+  .title {
+    @include text-size(64px);
+    line-height: 80px;
+  }
+  @include RWD(768px) {
+    .title {
+      @include text-size(48px);
+    }
+  }
+  @include RWD(375px) {
+    height: 143px;
+    .title {
+      @include text-size(28px);
+    }
+  }
+}
+
+.card {
+  &-body {
+    border: 1px solid #00000020;
+  }
+  &-title {
+    border-bottom: 1px solid #00000020;
+    line-height: 1.5;
+    @include text-size(24px);
+  }
+  &-list {
+    padding: 16px 24px 16px 29px;
+  }
+  .text {
+    line-height: 1.5;
+    @include text-size(20px);
+  }
+  .icon {
+    margin-right: 12px;
+  }
+  .btn {
+    font-size: 19px;
+    line-height: 26px;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      opacity: .75;
+    }
+  }
+}
+
+.fqa {
+  margin-top: 80px;
+  margin-bottom: 304px;
+  &__title {
+    @include text-size(32px);
+    line-height: 63px;
+    margin-bottom: 36px;
+  }
+  .question {
+    @include text-size(20px);
+    line-height: 23px;
+  }
+  .ans {
+    @include text-size(16px);
+    line-height: 1.5;
+  }
+}
+
+@include RWD(768px) {
+  .fqa {
+    margin-top: 40px;
+    margin-bottom: 104px;
+  }
+}
+
+@include RWD(375px) {
+  .fqa {
+    margin-top: 24px;
+    margin-bottom: 56px;
+    &__title {
+      @include text-size(20px);
+      margin-bottom: 12px;
+    }
+    .question {
+      @include text-size(16px);
+      line-height: 1.5;
+    }
+    .col-1 {
+      display: none;
+    }
+    .ans {
+      @include text-size(14px);
+      line-height: 1.5;
+    }
+  }
+}
