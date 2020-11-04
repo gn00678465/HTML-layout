@@ -1,14 +1,6 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-img {
-  display: block;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
+@import 'variable';
+@import 'function';
+@import 'mixin';
+@import 'grid';
+@import 'base';
+@import 'utility';

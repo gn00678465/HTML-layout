@@ -168,6 +168,7 @@ form {
   .btn {
     width: calc(50% - 30px);
     cursor: pointer;
+    transition: all .3s;
   }
   .btn-primary {
     background: var(--tertiary);

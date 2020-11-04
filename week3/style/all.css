@@ -3115,6 +3115,8 @@ form .checkbox {
 form .btn {
   width: calc(50% - 30px);
   cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 form .btn-primary {
@@ -3287,6 +3289,8 @@ form .btn-primary:hover, form .btn-primary:focus {
 .card .btn {
   font-size: 19px;
   line-height: 26px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
   cursor: pointer;
 }
 

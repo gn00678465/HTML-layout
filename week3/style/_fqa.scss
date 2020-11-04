@@ -42,6 +42,7 @@
   .btn {
     font-size: 19px;
     line-height: 26px;
+    transition: all .3s;
     cursor: pointer;
     &:hover,
     &:focus {

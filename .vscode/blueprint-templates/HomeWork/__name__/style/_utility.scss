@@ -1,0 +1,14 @@
+@include generatorDisplays();
+@include generatorFlexDirections();
+@include generatorCols();
+
+
+
+
+@each $key, $val in map-reverse($breakpoints) {
+  @include response-degin($key) {
+    @include generatorDisplays($key);
+    @include generatorFlexDirections($key);
+    @include generatorCols($key);
+  }
+};
