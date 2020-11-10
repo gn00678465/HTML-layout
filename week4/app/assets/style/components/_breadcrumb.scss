@@ -1,0 +1,29 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 17px;
+  margin-left: -4px;
+  font-size: 16px;
+  &__link {
+    padding-left: 4px;
+    &::after {
+      content: '\\';
+      margin-left: 4px;
+    }
+  }
+  &__item:last-child &__link::after {
+    content: '';
+    margin-left: 0;
+  }
+  .active {
+    color: var(--danger);
+  }
+  @include response-degin(md) {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  @include response-degin(sm) {
+    margin-bottom: 6px;
+  }
+}

@@ -1,14 +1,12 @@
 .nav {
   padding: 30px 88px;
-  .item {
+  .link {
+    @include text-size(20px);
+    line-height: 1.5;
     margin-right: 4rem;
     &:last-child {
       margin-right: 0;
     }
-  }
-  .link {
-    @include text-size(20px);
-    line-height: 1.5;
   }
 }
 

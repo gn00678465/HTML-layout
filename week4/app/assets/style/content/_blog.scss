@@ -1,0 +1,44 @@
+.search {
+  width: 24px;
+  height: 24px;
+}
+
+.blog {
+  margin-top: 82px;
+  margin-bottom: 100px;
+  @include response-degin(md) {
+    margin-top: 40px;
+  }
+  @include response-degin(sm) {
+    margin-top: 24px;
+  }
+}
+
+.blog {
+  &__post {
+    @include make-row;
+    margin-bottom: 60px;
+  }
+  &__img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  &__title {
+    line-height: 45px;
+  }
+  @include response-degin(md) {
+    &__post {
+      margin-bottom: 32px;
+    }
+    &__img {
+      height: 191px;
+    }
+    &__title {
+      line-height: 28px;
+    }
+  }
+  @include response-degin(sm) {
+    margin-bottom: 26px;
+  }
+}

@@ -1,6 +1,14 @@
-@import 'variable';
-@import 'function';
-@import 'mixin';
-@import 'grid';
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
 @import 'base';
+@import 'grid';
 @import 'utility';
+
+/*
+.example-container {
+  width: 800px;
+  @include make-container();
+}
+*/

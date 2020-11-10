@@ -1,0 +1,37 @@
+.location {
+  margin-bottom: 272px;
+  @include response-degin(md) {
+    margin-bottom: 84px;
+  }
+  @include response-degin(sm) {
+    margin-bottom: 40px;
+  }
+}
+
+.form-inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .select {
+    flex: 0 0 324px;
+    padding: 10px 19px;
+    color: #495057;
+    font-size: 18px;
+  }
+  @include response-degin(md) {
+    .select {
+      flex: 0 0 237px;
+      padding: 12px 16px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  @include response-degin(sm) {
+    .select {
+      flex: 1 0 0;
+      padding: 8px 16px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

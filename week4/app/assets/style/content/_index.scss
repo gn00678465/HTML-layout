@@ -1,0 +1,267 @@
+.header {
+  height: 840px;
+  background-image: url('./../images/index/banner.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include response-degin(sm) {
+    background-image: url('./../images/index/banner-sm.png');
+    height: 394px;
+  }
+}
+
+.about {
+  padding-top: 64px;
+  padding-bottom: 80px;
+  &__list {
+    margin-top: 60px;
+  }
+  img {
+    vertical-align: initial;
+    width: 100px;
+  }
+  h4 {
+    margin-bottom: 4px;
+  }
+  .col-3.col-md-6.col-sm-12 {
+    padding: 0 calc((25% - 208px) / 2);
+  }
+  @include response-degin(md) {
+    padding-top: 40px;
+    img {
+      width: 80px;
+    }
+    .col-3.col-md-6.col-sm-12 {
+      padding: 0 calc((50% - 237px) / 2);
+    }
+    h4 {
+      margin-bottom: 8px;
+    }
+  }
+  @include response-degin(sm) {
+    padding-top: 32px;
+    padding-bottom: 52px;
+    .col-3.col-md-6.col-sm-12 {
+      padding: 0 calc((100% - 237px) / 2);
+    }
+  }
+}
+
+.product,
+.design,
+.rec,
+.contact {
+  padding-top: 64px;
+  padding-bottom: 80px;
+  .h2 {
+    margin-bottom: 60px;
+  }
+  @include response-degin(md) {
+    padding: 40px 0;
+    .h2 {
+      margin-bottom: 32px;
+    }
+  }
+  @include response-degin(sm) {
+    padding: 32px 0;
+    .h2 {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.product {
+  text-transform: uppercase;
+  .optical,
+  .sunglasses,
+  .functional {
+    font-size: 3rem;
+  }
+  .sunglasses .product__img {
+    filter: grayscale(1);
+    transition: all .3s;
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+  @media (max-width: 992px) {
+    .optical,
+    .sunglasses,
+    .functional {
+      font-size: 2.25rem;
+    }
+  }
+  @include response-degin(md) {
+    .optical,
+    .sunglasses,
+    .functional {
+      font-size: 1.75rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .optical,
+    .sunglasses,
+    .functional {
+      font-size: 1.1rem;
+    }
+  }
+  @include response-degin(sm) {
+    .optical,
+    .sunglasses,
+    .functional {
+      font-size: 1.75rem;
+      position: absolute;
+      height: 100%;
+      text-align: center;
+      justify-content: center;
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.design {
+  background-image: url('./../images/index/design-bg.png');
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .cover {
+    font-size: px2rem(72px);
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  @include response-degin(md) {
+    .cover {
+      font-size: px2rem(32px);
+    }
+  }
+}
+
+.rec {
+  &__img {
+    height: 260px;
+    object-fit: cover;
+  }
+  &__content {
+    padding: 14px 16px 15px 16px;
+    border: 1px solid #DEE2E6;
+    border-top: none;
+  }
+  &__name {
+    margin-bottom: 7px;
+  }
+  &__text {
+    margin-bottom: 10px;
+  }
+  &__time {
+    color: #707070;
+  }
+  @include response-degin(md) {
+    li.col-3:nth-child(-n+2) {
+      margin-bottom: 28px;
+    }
+    &__content {
+      padding: 16px;
+    }
+  }
+  @include response-degin(sm) {
+    li.col-3:nth-child(-n+3) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.contact {
+  &__wrap {
+    max-width: 730px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .h2 {
+    margin-bottom: 24px;
+  }
+  @include response-degin(md) {
+    &__wrap {
+      max-width: 450px;
+    }
+    .h2 {
+      margin-bottom: 16px;
+    }
+  }
+  @include response-degin(sm) {
+    &__wrap {
+      max-width: 345px;
+    }
+    .h2 {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+form {
+  .form-field {
+    display: block;
+    width: 100%;
+  }
+  .form-check {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 42px;
+  }
+  .label {
+    display: block;
+    margin-bottom: 4px;
+  }
+  .input,
+  .textarea {
+    width: 100%;
+    padding: 14px 0 14px 16px;
+    border: 1px solid #000000;
+  }
+  .checkbox {
+    margin-right: 4px;
+  }
+  .btn-submit {
+    width: calc((100% - 30px) / 2);
+  }
+  @include response-degin(md) {
+    .form-check {
+      margin-bottom: 20px;
+    }
+    .label {
+      margin-bottom: 2px;
+    }
+    .input,
+    .textarea {
+      padding: 8px 0 8px 12px;
+    }
+    .checkbox {
+      margin-right: 2px;
+    }
+    .btn-submit {
+      width: calc((100% - 30px)/ 2);
+    }
+  }
+  @include response-degin(sm) {
+    .form-check {
+      margin-bottom: 24px;
+    }
+    .btn-submit {
+      width: calc((100% - 15px) / 2) ;
+    }
+  }
+}
+
+.btn-primary {
+  background: var(--danger);
+  border: 1px solid var(--danger);
+  color: #ffffff;
+  transition: all .3s;
+  &:hover,
+  &:focus {
+    background: var(--primary);
+  }
+}

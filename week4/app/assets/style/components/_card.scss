@@ -1,0 +1,30 @@
+.card {
+  &-header {
+    max-height: 224px;
+    overflow: hidden;
+  }
+  &-body {
+    border: 1px solid #00000020;
+  }
+  &-title {
+    border-bottom: 1px solid #00000020;
+  }
+  &-list {
+    padding: 16px 24px 16px 28px;
+  }
+  .btn {
+    font-size: 19px;
+    line-height: 26px;
+    transition: all .3s;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      opacity: .75;
+    }
+  }
+  @include response-degin(md) {
+    &-header {
+      max-height: 164px;
+    }
+  }
+}

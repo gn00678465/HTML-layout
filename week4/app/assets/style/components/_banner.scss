@@ -1,0 +1,9 @@
+.banner {
+  height: 304px;
+  background-image: url('./../images/qa.png');
+  background-size: cover;
+  background-position: center;
+  @include response-degin(sm) {
+    height: 143px;
+  }
+}

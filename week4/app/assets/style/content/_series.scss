@@ -1,0 +1,46 @@
+.series-banner {
+  height: 309px;
+  margin-bottom: 88px;
+  .img:first-child {
+    margin-right: 30px;
+  }
+  .img {
+    object-fit: cover;
+    object-position: center;
+    width: calc((100% - 30px) / 2);
+  }
+  @include response-degin(md) {
+    margin-bottom: 40px;
+    .img:first-child {
+      margin-right: 0;
+    }
+    .img {
+      width: 50%;
+    }
+  }
+  @include response-degin(sm) {
+    margin-bottom: 30px;
+    height: 144px;
+  }
+}
+
+.series {
+  .subtitle {
+    line-height: 63px;
+    font-size: 42px;
+  }
+  @include response-degin(md) {
+    margin-bottom: 33px;
+    .subtitle {
+      line-height: 48px;
+      font-size: 32px;
+    }
+  }
+  @include response-degin(sm) {
+    margin-bottom: 8px;
+    .subtitle {
+      line-height: 48px;
+      font-size: 20px;
+    }
+  }
+}

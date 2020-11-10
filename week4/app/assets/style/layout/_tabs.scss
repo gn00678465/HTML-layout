@@ -1,0 +1,42 @@
+.tabs {
+  max-width: 1386px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: px2rem(42px);
+  .tab {
+    flex: 0 0 percentage(1 / 3);
+    border: 1px solid #DCDCDC;
+  }
+  .active {
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-bottom: 16px solid var(--danger);
+    }
+  }
+  .icon {
+    margin-right: 8px;
+  }
+  @include response-degin(md) {
+    font-size: px2rem(28px);
+    .active {
+      &::after {
+        border-width: 8px;
+      }
+    }
+  }
+  @include response-degin(sm) {
+    font-size: px2rem(14px);
+    .active {
+      &::after {
+        border-width: 4px;
+      }
+    }
+    .icon {
+      margin-right: 4px;
+    }
+  }
+}

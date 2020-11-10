@@ -1,38 +1,12 @@
-@mixin generatorDisplays($breakpoints: null) {
-  @each $val in $displays {
-    .d-#{$breakpoints}#{if($breakpoints, '-', null)}#{$val} {
-      display: $val;
-    }
-  }
+.row {
+  @include make-row();
 }
 
-@mixin generatorFlexDirections($breakpoints: null) {
-    @each $val in $flex-directions {
-    .flex-#{$breakpoints}#{if($breakpoints, '-', null)}#{$val} {
-      flex: $val;
-    }
+@each $key, $val in map-reverse($breakpoints) {
+  $infix: breakpoint-infix($key, $breakpoints);
+  @include response-degin($val) {
+    @include generatorDisplays($infix);
+    @include generatorFlexDirections($infix);
+    @include generatorCols($infix);
   }
-}
-
-@mixin generatorCols($breakpoint: null) {
-  @for $i from 0 through $grid-count {
-    @if ($i == 0) {
-      .col {
-        padding-left: $gutter / 2;
-        padding-right: $gutter / 2;
-        flex-basis: 0;
-        flex-grow: 1;
-        max-width: 100%;
-        position: relative;
-      }
-    }  @else {
-        .col-#{$breakpoint}#{if($breakpoint, '-', null)}#{$i} {
-        position: relative;
-        padding-left: $gutter / 2;
-        padding-right: $gutter / 2;
-        flex: 0 0 ($i / $grid-count) * 100%;
-        max-width: ($i / $grid-count) * 100%;
-      }
-    }
-  }
-}
+};

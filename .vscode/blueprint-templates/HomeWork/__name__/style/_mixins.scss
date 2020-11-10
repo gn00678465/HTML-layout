@@ -1,0 +1,174 @@
+// CSS variable
+@mixin make-css-variables($map) {
+  $lists: map-keys($map);
+  @each $name in $lists {
+    --#{$name}: #{map-get($map, $name)};
+  }
+}
+
+// hide text
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+// displays
+@mixin generatorDisplays($infix: null) {
+  @each $val in $displays {
+    .d#{$infix}-#{$val} {
+      display: $val;
+    }
+  }
+}
+
+// flex-directions
+@mixin generatorFlexDirections($infix: null) {
+  @each $directions in $flex-directions {
+    .flex#{$infix}-#{$directions} {
+      flex: $directions;
+    }
+  }
+}
+
+// grid
+@mixin make-container($gutter: $gutter) {
+  --container-gutter-x: #{$gutter};
+  width: 100%;
+  padding-right: calc(var(--container-gutter-x) / 2);
+  padding-left: calc(var(--container-gutter-x) / 2);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin make-row($gutter: $gutter) {
+  --row-gutter-x: #{$gutter};
+  --row-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--row-gutter-y) * -1); // stylelint-disable-line function-disallowed-list
+  margin-right: calc(var(--row-gutter-x) / -2); // stylelint-disable-line function-disallowed-list
+  margin-left: calc(var(--row-gutter-x) / -2); // stylelint-disable-line function-disallowed-list
+}
+
+// cols
+@mixin generatorCols($infix: null) {
+  @for $i from 0 through $grid-count {
+    @if ($i == 0) {
+      .col#{$infix} {
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        width: 100%;
+        position: relative;
+      }
+    }  @else {
+        .col#{$infix}-#{$i} {
+        position: relative;
+        width: 100%;
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+        flex: 0 0 percentage($i / $grid-count);
+        max-width: percentage($i / $grid-count);
+      }
+    }
+  }
+}
+
+// RWD
+@mixin response-degin($breakpoint) {
+  @if not $breakpoint {
+    @content;
+  } @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+};
+
+// Colors
+@mixin generatorColors() {
+  @each $key, $val in $colors {
+    .text-#{$key} {
+      color: $val;
+    }
+    .bg-#{$key} {
+      background: $val;
+    }
+  };
+};
+
+// Font weights
+@mixin generatorFontWeight($infix: null) {
+  @each $ket, $val in $font-weights {
+    .font#{$infix}-#{$ket} {
+      font-weight: $val;
+    }
+  };
+}
+
+// text align
+@mixin generatorTextAlign($infix: null) {
+  @each $val in $directions {
+    @if($val != top and $val != bottom) {
+      .text#{$infix}-#{$val} {
+        text-align: $val;
+      }
+    }
+  };
+}
+
+// spaces
+@mixin make-spacing($name, $space, $map: $spacies, $dirction: null, $infix: null) {
+  $dir-fix: null;
+  @if($dirction != null) {
+      $dir-fix: str-slice($dirction, 0, 1);
+      $dirction: "-#{$dirction}"
+  }
+  .#{str-slice($name, 0, 1)}#{$dir-fix}#{$infix}-#{$space} {
+      #{$name}#{$dirction}: map-get($map, $space);
+  }
+}
+
+@mixin make-direction-spacing($name, $space, $map: $spacies, $dirction: null, $infix: null) {
+  $dir-fix: null;
+  @if($dirction != null) {
+      $dir-fix: str-slice($dirction, 0, 1);
+      $dirction: "-#{$dirction}"
+  }
+  .#{str-slice($name, 0, 1)}x#{$dir-fix}#{$infix}-#{$space} {
+      #{$name}-left: map-get($map, $space);
+      #{$name}-right: map-get($map, $space);
+  }
+  .#{str-slice($name, 0, 1)}y#{$dir-fix}#{$infix}-#{$space} {
+      #{$name}-top: map-get($map, $space);
+      #{$name}-bottom: map-get($map, $space);
+  }
+}
+
+@mixin generatorSpaces($infix: null) {
+  $types: ('margin', 'padding');
+  @each $type in $types {
+    @each $space in map-keys($spacies) {
+      @if($type == margin and $space == auto) {
+        @include make-spacing($type, $space, $spacies, null, $infix);
+        @include make-direction-spacing($type, $space, $spacies, null, $infix);
+        @each $dir in $directions {
+          @if($dir != center) {
+            @include make-spacing($type, $space, $spacies, $dir, $infix);
+          }
+        }
+      } @else if ($space != auto) {
+        @include make-spacing($type, $space, $spacies, null, $infix);
+        @include make-direction-spacing($type, $space, $spacies, null, $infix);
+        @each $dir in $directions {
+          @if($dir != center) {
+            @include make-spacing($type, $space, $spacies, $dir, $infix);
+          }
+        }
+      }
+    }
+  }
+}

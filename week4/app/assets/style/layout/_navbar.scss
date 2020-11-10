@@ -1,0 +1,35 @@
+.navbar {
+  padding: 0 88px;
+  @include response-degin(md) {
+    padding: 0 39px;
+  }
+  @include response-degin(sm) {
+    padding: 0;
+  }
+}
+
+.navbar {
+  .logo {
+    width: 80px;
+    margin: 30px 0;
+  }
+  .link {
+    transition: all .5s;
+      &:hover,
+      &:focus {
+        opacity: .75;
+      }
+  }
+}
+
+@include response-degin(sm) {
+  .navbar {
+    .logo {
+      margin: 10px 0;
+    }
+    li {
+      border: 1px solid #FFFFFF;
+      width: 50%;
+    }
+  }
+}

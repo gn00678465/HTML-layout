@@ -1,0 +1,23 @@
+.fqa {
+  margin-top: 80px;
+  margin-bottom: 304px;
+  @include response-degin(md) {
+    margin-top: 40px;
+    margin-bottom: 104px;
+  }
+  @include response-degin(sm) {
+    margin-top: 24px;
+    margin-bottom: 56px;
+  }
+}
+
+.fqa {
+  h2 {
+    margin-bottom: 36px;
+  }
+  @include response-degin(sm) {
+    h2 {
+      margin-bottom: 12px;
+    }
+  }
+}

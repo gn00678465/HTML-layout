@@ -1,0 +1,65 @@
+.optical-card {
+  margin-bottom: 104px;
+  &__img {
+    width: 100%;
+    height: 164px;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__body {
+    text-transform: uppercase;
+  }
+  .colors {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+  }
+  @include response-degin(md) {
+    margin-bottom: 72px;
+  }
+  @include response-degin(sm) {
+    margin-bottom: 32px;
+  }
+}
+
+.sunglasses-card {
+  margin-bottom: 112px;
+  &__img {
+    width: 100%;
+    height: 224px;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__body {
+    text-transform: uppercase;
+  }
+  .sn,
+  .price {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .colors {
+    width: 19px;
+    height: 19px;
+    border-radius: 4px;
+  }
+  @include response-degin(md) {
+    margin-bottom: 72px;
+    .sn,
+    .price {
+      font-size: 24px;
+    }
+  }
+  @include response-degin(sm) {
+    margin-bottom: 16px;
+  }
+}
+
+
+.brown {
+  background: #B75929;
+}
+
+.darkslategray {
+  background: #5F3E2D;
+}
