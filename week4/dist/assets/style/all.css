@@ -3019,4 +3019,46 @@ form .btn-submit {
   .blog {
     margin-bottom: 26px; } }
 
+.article {
+  margin-bottom: 304px; }
+  .article .title {
+    font-size: 48px;
+    line-height: 67px; }
+  .article .h4 {
+    font-size: 28px;
+    line-height: 37px; }
+  .article__text {
+    color: #0A0A0A;
+    margin-bottom: 36px; }
+    .article__text:last-of-type {
+      margin-bottom: 50px; }
+  .article .footer p {
+    border-bottom: 1px solid #000; }
+  .article .footer ul {
+    font-size: 19px; }
+  @media (max-width: 768px) {
+    .article {
+      margin-bottom: 104px; }
+      .article .title {
+        font-size: 32px;
+        line-height: 45px;
+        color: var(--primary); }
+      .article .h4 {
+        font-size: 16px;
+        line-height: 21px; }
+      .article__text {
+        margin-bottom: 24px; }
+        .article__text:last-of-type {
+          margin-bottom: 27px; }
+      .article .footer ul {
+        font-size: 16px; } }
+  @media (max-width: 576px) {
+    .article {
+      margin-bottom: 39px; }
+      .article .h4 {
+        font-size: 14px;
+        line-height: 24px; }
+      .article__text:last-of-type {
+        margin-bottom: 31px; } }
+
 /*# sourceMappingURL=all.css.map */
