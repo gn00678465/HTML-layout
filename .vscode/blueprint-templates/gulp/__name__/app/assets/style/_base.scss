@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  cursor: pointer;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  background: transparent;
+  border: none;
+}
+
+html, body {
+  font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+  line-height: 1.5;
+}
+
+:root {
+  @include make-css-variables($colors);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.icon {
+  height: 1em;
+  vertical-align: middle;
+}
+
+.releative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+a.hide-text {
+  @include hide-text;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}

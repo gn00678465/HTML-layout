@@ -77,10 +77,12 @@
   .functional {
     font-size: 3rem;
   }
-  .sunglasses .product__img {
+  .flex-row-reverse .product__img {
     filter: grayscale(1);
     transition: all .3s;
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       filter: grayscale(0);
     }
   }
@@ -96,13 +98,6 @@
     .sunglasses,
     .functional {
       font-size: 1.75rem;
-    }
-  }
-  @media (max-width: 600px) {
-    .optical,
-    .sunglasses,
-    .functional {
-      font-size: 1.1rem;
     }
   }
   @include response-degin(sm) {
@@ -142,6 +137,7 @@
 
 .rec {
   &__img {
+    width: 100%;
     height: 260px;
     object-fit: cover;
   }
