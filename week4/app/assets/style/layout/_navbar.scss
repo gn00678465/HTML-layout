@@ -1,7 +1,7 @@
 .navbar {
-  padding: 0 88px;
+  padding: 0 56px;
   @include response-degin(md) {
-    padding: 0 39px;
+    padding: 0 19px;
   }
   @include response-degin(sm) {
     padding: 0;

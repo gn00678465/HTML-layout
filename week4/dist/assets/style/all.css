@@ -2366,63 +2366,6 @@ a.hide-text {
   .card-header {
     max-height: 164px; } }
 
-.optical-card {
-  margin-bottom: 104px; }
-  .optical-card__img {
-    width: 100%;
-    height: 164px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center; }
-  .optical-card__body {
-    text-transform: uppercase; }
-  .optical-card .colors {
-    width: 24px;
-    height: 24px;
-    border-radius: 4px; }
-  @media (max-width: 768px) {
-    .optical-card {
-      margin-bottom: 72px; } }
-  @media (max-width: 576px) {
-    .optical-card {
-      margin-bottom: 32px; } }
-
-.sunglasses-card {
-  margin-bottom: 112px; }
-  .sunglasses-card__img {
-    width: 100%;
-    height: 224px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center; }
-  .sunglasses-card__body {
-    text-transform: uppercase; }
-  .sunglasses-card .sn,
-  .sunglasses-card .price {
-    font-size: 18px;
-    line-height: 30px; }
-  .sunglasses-card .colors {
-    width: 19px;
-    height: 19px;
-    border-radius: 4px; }
-  @media (max-width: 768px) {
-    .sunglasses-card {
-      margin-bottom: 72px; }
-      .sunglasses-card .sn,
-      .sunglasses-card .price {
-        font-size: 24px; } }
-  @media (max-width: 576px) {
-    .sunglasses-card {
-      margin-bottom: 16px; } }
-
-.brown {
-  background: #B75929; }
-
-.darkslategray {
-  background: #5F3E2D; }
-
 .breadcrumb {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2528,10 +2471,10 @@ a.hide-text {
         font-size: 11px; } }
 
 .navbar {
-  padding: 0 88px; }
+  padding: 0 56px; }
   @media (max-width: 768px) {
     .navbar {
-      padding: 0 39px; } }
+      padding: 0 19px; } }
   @media (max-width: 576px) {
     .navbar {
       padding: 0; } }
@@ -2929,6 +2872,63 @@ form .btn-submit {
       padding: 8px 16px;
       font-size: 14px;
       line-height: 20px; } }
+
+.optical-card {
+  margin-bottom: 104px; }
+  .optical-card__img {
+    width: 100%;
+    height: 164px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center; }
+  .optical-card__body {
+    text-transform: uppercase; }
+  .optical-card .colors {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px; }
+  @media (max-width: 768px) {
+    .optical-card {
+      margin-bottom: 72px; } }
+  @media (max-width: 576px) {
+    .optical-card {
+      margin-bottom: 32px; } }
+
+.sunglasses-card {
+  margin-bottom: 112px; }
+  .sunglasses-card__img {
+    width: 100%;
+    height: 224px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center; }
+  .sunglasses-card__body {
+    text-transform: uppercase; }
+  .sunglasses-card .sn,
+  .sunglasses-card .price {
+    font-size: 18px;
+    line-height: 30px; }
+  .sunglasses-card .colors {
+    width: 19px;
+    height: 19px;
+    border-radius: 4px; }
+  @media (max-width: 768px) {
+    .sunglasses-card {
+      margin-bottom: 72px; }
+      .sunglasses-card .sn,
+      .sunglasses-card .price {
+        font-size: 24px; } }
+  @media (max-width: 576px) {
+    .sunglasses-card {
+      margin-bottom: 16px; } }
+
+.brown {
+  background: #B75929; }
+
+.darkslategray {
+  background: #5F3E2D; }
 
 .series-banner {
   height: 309px;
