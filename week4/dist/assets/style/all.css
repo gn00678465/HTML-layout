@@ -110,6 +110,13 @@ a.hide-text {
   -ms-flex-item-align: end;
       align-self: flex-end; }
 
+.navbar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500; }
+
 .container {
   width: 100%;
   margin-right: auto;
