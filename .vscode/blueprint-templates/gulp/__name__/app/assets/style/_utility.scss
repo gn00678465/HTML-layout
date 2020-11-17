@@ -7,5 +7,6 @@
     @include generatorFontZise($infix);
     @include generatorTextAlign($infix);
     @include generatorSpaces($infix);
+    @include generatorPositions($infix);
   }
 };

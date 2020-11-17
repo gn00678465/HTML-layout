@@ -22,8 +22,17 @@
   }
 }
 
+// positions
+@mixin generatorPositions($infix: null) {
+  @each $val in $positions {
+    .position#{$infix}-#{$val} {
+      position: $val;
+    }
+  }
+}
+
 // flex-container-property
-@mixin generatorFlexContainerProperties($infix: null,) {
+@mixin generatorFlexContainerProperties($infix: null) {
   @each $container in map-keys($flex-container-property) {
     $properties: map-get($flex-container-property, $container);
     @if(type-of($properties) == list) {
@@ -36,22 +45,27 @@
   }
 }
 
-// flex-container-properties
+// flex-properties
+@mixin make-flex-property($name, $infix, $propery, $value) {
+  .#{$name}#{$infix}-#{$propery} {
+      #{$name}: $value;
+    }
+};
+
 @mixin generatorFlexAxisProperties($infix: null) {
-  @each $propery, $value in $flex-container-properties {
-    @if($propery == baseline or $propery == stretch) {
-      .align-items#{$infix}-#{$propery} {
-        align-items: $value;
-      }
-    } @else {
-      .justify-content#{$infix}-#{$propery} {
-        justify-content: $value;
-      }
-      .align-items#{$infix}-#{$propery} {
-        align-items: $value;
+@each $item in map-keys($flex-properties) {
+  @if ($item == all) {
+    @each $propery, $value in map-get($flex-properties, $item) {
+      @each $name in (align-items, justify-content, align-self) {
+        @include make-flex-property($name, $infix, $propery, $value);
       }
     }
+  } @else {
+    @each $propery, $value in map-get($flex-properties, $item) {
+      @include make-flex-property(justify-content, $infix, $propery, $value);
+    }
   }
+}
 }
 
 // grid

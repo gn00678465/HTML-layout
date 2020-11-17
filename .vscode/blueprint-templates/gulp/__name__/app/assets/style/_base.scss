@@ -56,18 +56,6 @@ html, body {
   vertical-align: middle;
 }
 
-.releative {
-  position: relative;
-}
-
-.absolute {
-  position: absolute;
-}
-
-a.hide-text {
+.hide-text {
   @include hide-text;
-}
-
-.align-self-end {
-  align-self: flex-end;
 }
