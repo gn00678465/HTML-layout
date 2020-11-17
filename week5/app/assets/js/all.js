@@ -53,9 +53,7 @@
   ];
   
   $(document).ready(() => {
-    
     const currentPath = window.location.pathname.split('.')[0].replace(/[^a-zA-Z]/g, '');
-    
     
     function page() {
       if (currentPath === 'index') {
@@ -201,7 +199,7 @@
         userTemp = {...user_array[index]};
         modalHandler(e);
       }
-      
+
       userTable();
     }
 
