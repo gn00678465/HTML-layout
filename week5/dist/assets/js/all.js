@@ -63,144 +63,160 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     verified: true
   }];
   $(document).ready(function () {
-    var tbody = document.querySelector('.tbody');
     var currentPath = window.location.pathname.split('.')[0].replace(/[^a-zA-Z]/g, '');
-    var textEditBtn = document.querySelector('[data-toggle="text-edit"]');
-    var textEdit = document.querySelector('.text-edit'); // text-edit
 
-    textEditBtn.addEventListener('click', function () {
-      if (!textEdit.classList.contains('show')) {
-        textEdit.classList.add('show');
-      }
-
-      textEdit.querySelector('[data-dismiss="modal"').addEventListener('click', function () {
-        textEdit.classList.remove('show');
-      });
-    }); // admin page
-
-    var table = document.querySelector('.table');
-
-    function userTable() {
-      if (currentPath == 'admin') {
-        var user_html = user_array.map(function (user, index) {
-          return "\n          <tr class=\"tr\">\n            <td class=\"td\">#".concat(index + 1, "</td>\n            <td class=\"td\">").concat(user.name, "</td>\n            <td class=\"td\">").concat(user.mail, "</td>\n            <td class=\"td\">").concat(user.verified ? 'Yes' : 'No', "</td>\n            <td class=\"td\">\n              <button type=\"button\" class=\"material-icons btn-icon hover-primary mr-6\" data-target=\"userPhotoModal\" data-action=\"view\" data-name=\"").concat(user.name, "\">remove_red_eye</button>\n              <button type=\"button\" class=\"material-icons btn-icon hover-primary edit-admin\" data-target=\"userDataModal\" data-action=\"edit\" data-name=\"").concat(user.name, "\">edit</button>\n            </td>\n          </tr>\n          ");
-        }).join('');
-        tbody.innerHTML = user_html;
-        addAdminBtn.addEventListener('click', modalHandler);
-        table.addEventListener('click', tableHandler);
-      }
-    } // modal
-
-
-    var addAdminBtn = document.querySelector('.add-admin');
-    var modalShow = false;
-    var modalStatus = '';
-    var currentModal = null;
-    var userTemp = {};
-
-    var modals = _toConsumableArray(document.querySelectorAll('.modal'));
-
-    modals.forEach(function (modal) {
-      modal.classList.add('d-none');
-    });
-
-    function modalShowHandler() {
-      currentModal.classList.remove('d-none');
-      currentModal.classList.add('d-block');
-      setTimeout(function () {
-        currentModal.classList.add('show');
-      }, 200);
-      var deactivate = currentModal.querySelector('#deactivate');
-      var addBtn = currentModal.querySelector('.add-btn');
-      var updateBtn = currentModal.querySelector('.update-btn');
-
-      if (modalShow && modalStatus === 'edit') {
-        var name = currentModal.querySelector('#name');
-        var mail = currentModal.querySelector('#mail');
-        var verification = currentModal.querySelector('#verification');
-        deactivate.classList.remove('d-none');
-        deactivate.classList.add('d-block');
-        addBtn.style.display = 'none';
-        updateBtn.style.display = 'inline-block';
-        name.value = userTemp.name;
-        mail.value = userTemp.mail;
-
-        if (userTemp.verified) {
-          verification.querySelector('.label').innerText = "Verified";
-          verification.querySelector('#verified').checked = userTemp.verified;
-          verification.querySelector('#verified').readOnly = true;
-          verification.querySelector('[type="button"]').disabled = true;
-        }
-      } else if (modalShow && modalStatus === 'add') {
-        deactivate.classList.add('d-none');
-        deactivate.classList.remove('d-block');
-        updateBtn.style.display = 'none';
-        addBtn.style.display = 'inline-block';
+    function page() {
+      if (currentPath === 'index') {
+        indexHandler();
+      } else if (currentPath === 'admin') {
+        adminHandler();
       }
     }
 
-    function modalHandler(e) {
-      var _e$target$dataset = e.target.dataset,
-          target = _e$target$dataset.target,
-          action = _e$target$dataset.action;
-      currentModal = document.querySelector("#".concat(target));
-      modalShow = true;
-      modalStatus = action;
-      modalShowHandler();
-      currentModal.addEventListener('click', function (e) {
-        if (e.currentTarget === e.target || e.target.dataset.dismiss === 'modal') {
-          moadalClose();
+    function indexHandler() {
+      var textEditBtn = document.querySelector('[data-toggle="text-edit"]');
+      var textEdit = document.querySelector('.text-edit'); // text-edit
+
+      textEditBtn.addEventListener('click', function () {
+        if (!textEdit.classList.contains('show')) {
+          textEdit.classList.add('show');
         }
+
+        textEdit.querySelector('[data-dismiss="modal"').addEventListener('click', function () {
+          textEdit.classList.remove('show');
+        });
+      });
+    }
+
+    function adminHandler() {
+      // 產生表格
+      var tbody = document.querySelector('.tbody');
+
+      function userTable() {
+        if (currentPath == 'admin') {
+          var user_html = user_array.map(function (user, index) {
+            return "\n            <tr class=\"tr\">\n              <td class=\"td\">#".concat(index + 1, "</td>\n              <td class=\"td\">").concat(user.name, "</td>\n              <td class=\"td\">").concat(user.mail, "</td>\n              <td class=\"td\">").concat(user.verified ? 'Yes' : 'No', "</td>\n              <td class=\"td\">\n                <button type=\"button\" class=\"material-icons btn-icon hover-primary mr-6\" data-target=\"userPhotoModal\" data-action=\"view\" data-name=\"").concat(user.name, "\">remove_red_eye</button>\n                <button type=\"button\" class=\"material-icons btn-icon hover-primary edit-admin\" data-target=\"userDataModal\" data-action=\"edit\" data-name=\"").concat(user.name, "\">edit</button>\n              </td>\n            </tr>\n            ");
+          }).join('');
+          tbody.innerHTML = user_html;
+          addAdminBtn.addEventListener('click', modalHandler);
+          table.addEventListener('click', tableHandler);
+        }
+      }
+
+      var table = document.querySelector('.table'); // modal
+
+      var addAdminBtn = document.querySelector('.add-admin');
+      var modalShow = false;
+      var modalStatus = '';
+      var currentModal = null;
+      var userTemp = {};
+
+      var modals = _toConsumableArray(document.querySelectorAll('.modal'));
+
+      modals.forEach(function (modal) {
+        modal.classList.add('d-none');
       });
 
-      if (action === 'view') {
-        var userDetial = currentModal.querySelector('#userDetial');
-        var showBtn = userDetial.querySelector('.showBtn');
+      function modalShowHandler() {
+        currentModal.classList.remove('d-none');
+        currentModal.classList.add('d-block');
+        setTimeout(function () {
+          currentModal.classList.add('show');
+        }, 200);
+        var deactivate = currentModal.querySelector('#deactivate');
+        var addBtn = currentModal.querySelector('.add-btn');
+        var updateBtn = currentModal.querySelector('.update-btn');
 
-        if (userDetial.classList.contains('open')) {
-          userDetial.classList.remove('open');
+        if (modalShow && modalStatus === 'edit') {
+          var name = currentModal.querySelector('#name');
+          var mail = currentModal.querySelector('#mail');
+          var verification = currentModal.querySelector('#verification');
+          deactivate.classList.remove('d-none');
+          deactivate.classList.add('d-block');
+          addBtn.style.display = 'none';
+          updateBtn.style.display = 'inline-block';
+          name.value = userTemp.name;
+          mail.value = userTemp.mail;
+
+          if (userTemp.verified) {
+            verification.querySelector('.label').innerText = "Verified";
+            verification.querySelector('#verified').checked = userTemp.verified;
+            verification.querySelector('#verified').readOnly = true;
+            verification.querySelector('[type="button"]').disabled = true;
+          }
+        } else if (modalShow && modalStatus === 'add') {
+          deactivate.classList.add('d-none');
+          deactivate.classList.remove('d-block');
+          updateBtn.style.display = 'none';
+          addBtn.style.display = 'inline-block';
+        }
+      }
+
+      function modalHandler(e) {
+        var _e$target$dataset = e.target.dataset,
+            target = _e$target$dataset.target,
+            action = _e$target$dataset.action;
+        currentModal = document.querySelector("#".concat(target));
+        modalShow = true;
+        modalStatus = action;
+        modalShowHandler();
+        currentModal.addEventListener('click', function (e) {
+          if (e.currentTarget === e.target || e.target.dataset.dismiss === 'modal') {
+            moadalClose();
+          }
+        });
+
+        if (action === 'view') {
+          var userDetial = currentModal.querySelector('#userDetial');
+          var showBtn = userDetial.querySelector('.showBtn');
+
+          if (userDetial.classList.contains('open')) {
+            userDetial.classList.remove('open');
+            showBtn.addEventListener('click', function () {
+              userDetial.classList.toggle('open');
+            });
+          }
+
           showBtn.addEventListener('click', function () {
             userDetial.classList.toggle('open');
           });
         }
+      }
 
-        showBtn.addEventListener('click', function () {
-          userDetial.classList.toggle('open');
+      function moadalClose() {
+        if (modalShow && modalStatus === 'edit') {
+          userTemp = {};
+          var name = currentModal.querySelector('#name');
+          var mail = currentModal.querySelector('#mail');
+          var verification = currentModal.querySelector('#verification');
+          name.value = '';
+          mail.value = '';
+          verification.querySelector('#verified').checked = false;
+          verification.querySelector('[type="button"]').disabled = false;
+        }
+
+        currentModal.classList.remove('show');
+        setTimeout(function () {
+          currentModal.classList.remove('d-block');
+          currentModal.classList.add('d-none');
+          modalShow = false;
+          modalStatus = ''; // currentModal = null;
+        }, 200);
+      }
+
+      function tableHandler(e) {
+        var name = e.target.dataset.name;
+        var index = user_array.findIndex(function (user) {
+          return user.name === name;
         });
-      }
-    }
-
-    function moadalClose() {
-      if (modalShow && modalStatus === 'edit') {
-        userTemp = {};
-        var name = currentModal.querySelector('#name');
-        var mail = currentModal.querySelector('#mail');
-        var verification = currentModal.querySelector('#verification');
-        name.value = '';
-        mail.value = '';
-        verification.querySelector('#verified').checked = false;
-        verification.querySelector('[type="button"]').disabled = false;
+        userTemp = _objectSpread({}, user_array[index]);
+        modalHandler(e);
       }
 
-      currentModal.classList.remove('show');
-      setTimeout(function () {
-        currentModal.classList.remove('d-block');
-        currentModal.classList.add('d-none');
-        modalShow = false;
-        modalStatus = ''; // currentModal = null;
-      }, 200);
+      userTable();
     }
 
-    function tableHandler(e) {
-      var name = e.target.dataset.name;
-      var index = user_array.findIndex(function (user) {
-        return user.name === name;
-      });
-      userTemp = _objectSpread({}, user_array[index]);
-      modalHandler(e);
-    }
-
-    userTable();
+    page();
   });
 })($);
 //# sourceMappingURL=all.js.map
