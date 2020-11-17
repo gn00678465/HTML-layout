@@ -91,19 +91,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     function adminHandler() {
       // 產生表格
       var tbody = document.querySelector('.tbody');
+      var table = document.querySelector('.table');
 
       function userTable() {
-        if (currentPath == 'admin') {
-          var user_html = user_array.map(function (user, index) {
-            return "\n            <tr class=\"tr\">\n              <td class=\"td\">#".concat(index + 1, "</td>\n              <td class=\"td\">").concat(user.name, "</td>\n              <td class=\"td\">").concat(user.mail, "</td>\n              <td class=\"td\">").concat(user.verified ? 'Yes' : 'No', "</td>\n              <td class=\"td\">\n                <button type=\"button\" class=\"material-icons btn-icon hover-primary mr-6\" data-target=\"userPhotoModal\" data-action=\"view\" data-name=\"").concat(user.name, "\">remove_red_eye</button>\n                <button type=\"button\" class=\"material-icons btn-icon hover-primary edit-admin\" data-target=\"userDataModal\" data-action=\"edit\" data-name=\"").concat(user.name, "\">edit</button>\n              </td>\n            </tr>\n            ");
-          }).join('');
-          tbody.innerHTML = user_html;
-          addAdminBtn.addEventListener('click', modalHandler);
-          table.addEventListener('click', tableHandler);
-        }
-      }
+        var user_html = user_array.map(function (user, index) {
+          return "\n          <tr class=\"tr\">\n            <td class=\"td\">#".concat(index + 1, "</td>\n            <td class=\"td\">").concat(user.name, "</td>\n            <td class=\"td\">").concat(user.mail, "</td>\n            <td class=\"td\">").concat(user.verified ? 'Yes' : 'No', "</td>\n            <td class=\"td\">\n              <button type=\"button\" class=\"material-icons btn-icon hover-primary mr-6\" data-target=\"userPhotoModal\" data-action=\"view\" data-name=\"").concat(user.name, "\">remove_red_eye</button>\n              <button type=\"button\" class=\"material-icons btn-icon hover-primary edit-admin\" data-target=\"userDataModal\" data-action=\"edit\" data-name=\"").concat(user.name, "\">edit</button>\n            </td>\n          </tr>\n          ");
+        }).join('');
+        tbody.innerHTML = user_html;
+      } // modal
 
-      var table = document.querySelector('.table'); // modal
 
       var addAdminBtn = document.querySelector('.add-admin');
       var modalShow = false;
@@ -214,6 +210,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }
 
       userTable();
+      addAdminBtn.addEventListener('click', modalHandler);
+      table.addEventListener('click', tableHandler);
     }
 
     page();

@@ -67,41 +67,38 @@
       const textEditBtn = document.querySelector('[data-toggle="text-edit"]');
       const textEdit = document.querySelector('.text-edit');
       // text-edit
-    textEditBtn.addEventListener('click',function(){
-      if (!textEdit.classList.contains('show')) {
-        textEdit.classList.add('show');
-      }
-      textEdit.querySelector('[data-dismiss="modal"').addEventListener('click', function() {
-        textEdit.classList.remove('show');
+      textEditBtn.addEventListener('click',function(){
+        if (!textEdit.classList.contains('show')) {
+          textEdit.classList.add('show');
+        }
+        textEdit.querySelector('[data-dismiss="modal"').addEventListener('click', function() {
+          textEdit.classList.remove('show');
+        })
       })
-    })
     }
     
     function adminHandler() {
       // 產生表格
       const tbody = document.querySelector('.tbody');
-      function userTable() {
-        if (currentPath == 'admin') {
-          let user_html = user_array.map((user, index) => {
-            return `
-            <tr class="tr">
-              <td class="td">#${index + 1}</td>
-              <td class="td">${user.name}</td>
-              <td class="td">${user.mail}</td>
-              <td class="td">${user.verified ? 'Yes' : 'No'}</td>
-              <td class="td">
-                <button type="button" class="material-icons btn-icon hover-primary mr-6" data-target="userPhotoModal" data-action="view" data-name="${user.name}">remove_red_eye</button>
-                <button type="button" class="material-icons btn-icon hover-primary edit-admin" data-target="userDataModal" data-action="edit" data-name="${user.name}">edit</button>
-              </td>
-            </tr>
-            `
-          }).join('');
-          tbody.innerHTML = user_html;
-          addAdminBtn.addEventListener('click', modalHandler);
-          table.addEventListener('click', tableHandler);
-        }
-      }
       const table = document.querySelector('.table');
+      function userTable() {
+        let user_html = user_array.map((user, index) => {
+          return `
+          <tr class="tr">
+            <td class="td">#${index + 1}</td>
+            <td class="td">${user.name}</td>
+            <td class="td">${user.mail}</td>
+            <td class="td">${user.verified ? 'Yes' : 'No'}</td>
+            <td class="td">
+              <button type="button" class="material-icons btn-icon hover-primary mr-6" data-target="userPhotoModal" data-action="view" data-name="${user.name}">remove_red_eye</button>
+              <button type="button" class="material-icons btn-icon hover-primary edit-admin" data-target="userDataModal" data-action="edit" data-name="${user.name}">edit</button>
+            </td>
+          </tr>
+          `
+        }).join('');
+        tbody.innerHTML = user_html;
+      }
+      
 
       // modal
       const addAdminBtn = document.querySelector('.add-admin');
@@ -201,6 +198,9 @@
       }
 
       userTable();
+
+      addAdminBtn.addEventListener('click', modalHandler);
+      table.addEventListener('click', tableHandler);
     }
 
     page();
