@@ -125,6 +125,9 @@ html, body {
   text-indent: 101%;
   white-space: nowrap; }
 
+.white-nowrap {
+  white-space: nowrap; }
+
 .container {
   width: 100%;
   margin-right: auto;
@@ -1544,6 +1547,47 @@ html, body {
   -webkit-transition: all .15s ease-in-out;
   -o-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out; }
+
+.text-edit {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  overflow: hidden; }
+  .text-edit-header {
+    background: var(--light);
+    padding: 16px 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .text-edit-body {
+    padding: 16px 24px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .text-edit .textarea {
+    font-size: 16px; }
+  .text-edit.show {
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    height: auto;
+    opacity: 1;
+    width: 700px; }
 
 .sidebar {
   -ms-flex-preferred-size: 296px;

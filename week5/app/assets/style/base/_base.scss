@@ -89,3 +89,7 @@ html, body {
 .hide-text {
   @include hide-text;
 }
+
+.white-nowrap {
+  white-space: nowrap;
+}
