@@ -1,0 +1,11 @@
+// Colors
+@mixin generatorColors() {
+  @each $key, $val in $colors {
+    .text-#{$key} {
+      color: $val;
+    }
+    .bg-#{$key} {
+      background: $val;
+    }
+  };
+};

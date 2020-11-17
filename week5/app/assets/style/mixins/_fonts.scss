@@ -1,0 +1,43 @@
+// Font size
+@mixin generatorFontZise($infix: null) {
+  @each $size in map-keys($font-sizes) {
+    .text#{$infix}-#{$size} {
+      font-size: px2rem(map-get($font-sizes, $size));
+    }
+  }
+}
+
+// Font weights
+@mixin generatorFontWeight($infix: null) {
+  @each $ket, $val in $font-weights {
+    .font#{$infix}-#{$ket} {
+      font-weight: $val;
+    }
+  };
+}
+
+// text align
+@mixin generatorTextAlign($infix: null) {
+  @each $val in $directions {
+    @if($val != top and $val != bottom) {
+      .text#{$infix}-#{$val} {
+        text-align: $val;
+      }
+    }
+  };
+}
+
+// text-transform
+@mixin generatorFontTransform() {
+  @each $val in $font-transforms {
+    @if ($val == none) {
+      .font-normal-case {
+        text-transform: $val
+      }
+    } @else {
+      .font-#{$val} {
+        text-transform: $val
+      }
+    }
+  };
+}

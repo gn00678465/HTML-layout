@@ -1,0 +1,31 @@
+.pagination {
+  .page {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #CDDDCD;
+    transition: color .3s ease-in-out;
+    &:not(.active):hover {
+      background: var(--light);
+    }
+    &.active {
+      background: var(--primary);
+      color: #fff;
+      cursor: auto;
+    }
+  }
+  li {
+    &:first-child .page {
+      border-radius: 2px 0px 0px 2px;
+    }
+    &:last-child .page {
+      border-radius: 0px 2px 2px 0px;
+    }
+    &:not(:last-child) .page {
+      border-right: none;
+    }
+  }
+}

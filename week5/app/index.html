@@ -1,0 +1,95 @@
+---
+title: Assignment
+header: assignment
+footer: assignment
+layout: ./app/layout.ejs
+engine: ejs
+current: index
+---
+
+<main class="assignment mt-3">
+  <div class="d-flex align-items-center">
+    <p class="font-bold">All (4)</p>
+    <button type="button" class="arrow material-icons vertical-middle text-primary">keyboard_arrow_down</button>
+    <p class="comment ml-auto text-sm">2 comments</p>
+  </div>
+  <div class="assignment__wrap d-flex">
+    <ul class="assignment__list mr-4 border-round">
+      <li class="border-bottom">
+        <a class="p-3 d-block assignment__item-active active" href="">
+          <p class="mb-2 text-sm d-flex align-items-center justify-content-between">Chapter Assignment 2<span>4 hrs ago</span></p>
+          <p class="d-flex align-items-center justify-content-between">Please check this file…<span class="text-black-50 text-sm">Emily Wang</span></p>
+        </a>
+      </li>
+      <li class="border-bottom">
+        <a class="p-3 d-block assignment__item-active" href="">
+          <p class="mb-2 text-sm d-flex align-items-center justify-content-between">Chapter Assignment 1<span>12 hrs ago</span></p>
+          <p class="d-flex align-items-center justify-content-between">My Homework<span class="text-black-50 text-sm">David Xu</span></p>
+        </a>
+      </li>
+      <li class="border-bottom">
+        <a class="p-3 d-block assignment__item-active" href="">
+          <p class="mb-2 text-sm d-flex align-items-center justify-content-between">Final Assignment<span>18 hrs ago</span></p>
+          <p class="d-flex align-items-center justify-content-between">Have a problem with this…<span class="text-black-50 text-sm">Tony Wei</span></p>
+        </a>
+      </li>
+      <li class="border-bottom">
+        <a class="p-3 d-block assignment__item-active" href="">
+          <p class="mb-2 text-sm d-flex align-items-center justify-content-between">Chapter Assignment 2<span>19 hrs ago</span></p>
+          <p class="d-flex align-items-center justify-content-between">Did I do it right?<span class="text-black-50 text-sm">Christina Lin</span></p>
+        </a>
+      </li>
+    </ul>
+    <div class="border-round assignment__body">
+      <div class="d-flex align-items-center justify-content-between bg-light px-4 py-3 border-bottom">
+        <div>
+          <p class="mb-2 text-sm d-flex align-items-center justify-content-between">Chapter Assignment 2</p>
+          <p class="d-flex align-items-center justify-content-between">Please check this file for me, thanks!</p>
+        </div>
+        <button type="button"class="more material-icons">
+          more_vert
+        </button>
+      </div>
+      <div class="px-4 pt-4">
+        <div class="user d-flex align-items-center mt-auto">
+          <img src="./assets/images/emilywang.jpeg" alt="" class="photo mr-2">
+          <div class="d-flex flex-column justify-content-between">
+            <p class="font-bold">Emily Wang</p>
+            <p class="text-black-50 text-2_sm">10:38 AM (4 hours ago)</p>
+          </div>
+        </div>
+        <div class="assignment__content text-2_sm pb-4">
+          <p>
+            Hi Teacher, the attached file is my homework of chapter 2. And here comes a question: Why in the following code the height of the <code class="code">div</code> is bigger than the height of the <code class="code">img</code> ? There is a gap below the image, but it doesn’t seems to be a padding/margin. What is the gap or extra space below image?
+          </p>
+          <div class="form-file mt-4 bg-light border-round d-inline-block">
+            <label for="file" class="label font-bold d-block py-2 pl-3 pr-4">
+              <i class="material-icons mr-2 vertical-middle">attach_file</i>HW-2-David.zip
+            </label>
+            <input type="file" name="file" id="file" class="input d-none">
+          </div>
+        </div>
+      </div>
+      <div class="px-4 pt-4">
+        <div class="user d-flex align-items-center mt-auto">
+          <img src="./assets/images/andychen.jpeg" alt="" class="photo mr-2">
+          <div class="d-flex flex-column justify-content-between mr-auto">
+            <p class="font-bold">Andy Chen (You)</p>
+            <p class="text-black-50 text-2_sm">13:24 AM (1 hours ago)</p>
+          </div>
+          <button class="material-icons mr-6 btn-icon hover-warning">star_border</button>
+          <button class="material-icons btn-icon hover-primary">edit</button>
+        </div>
+        <div class="assignment__content text-2_sm pb-4">
+          <p>
+            Hi David, by default, an image is rendered inline, like a letter so it sits on the same line that a, b, c and d sit on. There is space below that line for the descenders you find on letters like g, j, p and q. <br><br>You can:<br><br>
+          </p>
+          <ul>
+            <li>adjust the <code class="code">vertical-align</code> of the image to position it elsewhere (e.g. the <code class="code">middle</code> ) or</li>
+            <li>change the <code class="code">display</code> so it isn’t inline.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

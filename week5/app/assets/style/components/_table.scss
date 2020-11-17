@@ -1,0 +1,28 @@
+.table {
+  width: 100%;
+  .tr {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  .thead .tr {
+    border-bottom-color: #121212;
+  }
+  .th {
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 4px;
+  }
+  .tbody .tr {
+    border-bottom-color: #CDDDCD;
+    &:hover {
+      background: var(--light);
+    }
+  }
+  .td {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    &:last-child {
+      text-align: right;
+    }
+  }
+}

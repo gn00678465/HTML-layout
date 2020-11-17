@@ -1,0 +1,63 @@
+// displays
+@mixin generatorDisplays($infix: null) {
+  @each $val in $displays {
+    .d#{$infix}-#{$val} {
+      display: $val;
+    }
+  }
+}
+
+// positions
+@mixin generatorPositions($infix: null) {
+  @each $val in $positions {
+    .position#{$infix}-#{$val} {
+      position: $val;
+    }
+  }
+}
+
+// flex-container-property
+@mixin generatorFlexContainerProperties($infix: null) {
+  @each $container in map-keys($flex-container-property) {
+    $properties: map-get($flex-container-property, $container);
+    @if(type-of($properties) == list) {
+      @each $property in $properties {
+        .flex#{$infix}-#{$property} {
+          flex-#{$container}: $property;
+        }
+      }
+    }
+  }
+}
+
+// flex-properties
+@mixin make-flex-property($name, $infix, $propery, $value) {
+  .#{$name}#{$infix}-#{$propery} {
+      #{$name}: $value;
+    }
+};
+
+@mixin generatorFlexAxisProperties($infix: null) {
+  @each $item in map-keys($flex-properties) {
+    @if ($item == all) {
+      @each $propery, $value in map-get($flex-properties, $item) {
+        @each $name in (align-items, justify-content, align-self) {
+          @include make-flex-property($name, $infix, $propery, $value);
+        }
+      }
+    } @else {
+      @each $propery, $value in map-get($flex-properties, $item) {
+        @include make-flex-property(justify-content, $infix, $propery, $value);
+      }
+    }
+  }
+}
+
+// vertical-align
+@mixin generatorVerticalAlign($infix: null) {
+  @each $val in $vertical-aligns {
+    .vertical-#{$val} {
+      vertical-align: $val;
+    }
+  }
+}

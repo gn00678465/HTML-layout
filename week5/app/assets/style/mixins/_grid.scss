@@ -1,0 +1,45 @@
+// grid
+@mixin make-container($gutter: $gutter) {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  --container-gutter-x: #{$gutter};
+  padding-right: calc(var(--container-gutter-x) / 2);
+  padding-left: calc(var(--container-gutter-x) / 2);
+}
+
+@mixin make-row($gutter: $gutter) {
+  --row-gutter-x: #{$gutter};
+  --row-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--row-gutter-y) * -1);
+  margin-right: calc(var(--row-gutter-x) / -2);
+  margin-left: calc(var(--row-gutter-x) / -2);
+}
+
+// cols
+@mixin generatorColumns($infix: null) {
+  @for $i from 0 through $grid-count {
+    @if ($i == 0) {
+      .col#{$infix} {
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        width: 100%;
+        position: relative;
+      }
+    }  @else {
+        .col#{$infix}-#{$i} {
+        position: relative;
+        width: 100%;
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+        flex: 0 0 percentage($i / $grid-count);
+        max-width: percentage($i / $grid-count);
+      }
+    }
+  }
+}

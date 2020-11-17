@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%- title %></title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+<body>
+  <div class="h-100 d-flex">
+    <sidebar class="sidebar d-flex flex-column align-items-start bg-light p-7">
+      <img src="./assets/images/logo.svg" alt="answer">
+      <ul class="menu">
+        <li class="item"><a class="d-block font-bold py-1 link" href="#">
+          <i class="material-icons vertical-middle mr-4">assessment</i>Dashboard</a>
+        </li>
+        <li class="item"><a class="d-block font-bold py-1 link" href="#">
+          <i class="material-icons vertical-middle mr-4">question_answer</i>Question</a>
+        </li>
+        <% if (title === "Assignment") { %>
+          <li class="item"><a class="d-block font-bold py-1 link active" href="index.html" data-link="Assignment">
+        <% } else { %>
+          <li class="item"><a class="d-block font-bold py-1 link" href="index.html" data-link="Assignment">
+        <% } %>
+          <i class="material-icons vertical-middle mr-4">assignment</i>Assignment</a>
+        </li>
+        <li class="item"><a class="d-block font-bold py-1 link" href="#">
+          <i class="material-icons vertical-middle mr-4">video_library</i>Course</a>
+        </li>
+        <% if (title === "Admin") { %>
+          <li class="item"><a class="d-block font-bold py-1 link active" href="admin.html" data-link="Admin">
+        <% } else { %>
+          <li class="item"><a class="d-block font-bold py-1 link" href="admin.html" data-link="Admin">
+        <% } %>
+          <i class="material-icons vertical-middle mr-4">people</i>Admin</a>
+        </li>
+        <li class="item"><a class="d-block font-bold py-1 link" href="#">
+          <i class="material-icons vertical-middle mr-4">settings</i>Settings</a>
+        </li>
+      </ul>
+      <div class="user d-flex align-items-center mt-auto">
+        <img src="./assets/images/andychen.jpeg" alt="" class="photo mr-4">
+        <div class="d-flex flex-column justify-content-between">
+          <p class="font-bold">Andy Chen</p>
+          <p class="text-black-50 text-2_sm">andy0401@mail.com</p>
+        </div>
+      </div>
+    </sidebar>
+  
+    <div class="expander d-flex flex-column p-7">
+      <!-- header -->
+      <% if (header == 'assignment') { %>
+        <%- include('assignment-header.ejs'); %>
+      <% } else { %>
+        <%- include('admin-header.ejs'); %>
+      <% } %>
+      <!-- main -->
+      <%- contents %>
+      <!-- footer -->
+      <% if (footer == 'assignment') { %>
+        <%- include('assignment-footer.ejs'); %>
+      <% } else { %>
+        <%- include('admin-footer.ejs'); %>
+        <%- include('modal.ejs'); %>
+        <%- include('modal-user.ejs'); %>
+      <% } %>
+    </div>
+  </div>
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/all.js"></script>
+</body>
+
+</html>

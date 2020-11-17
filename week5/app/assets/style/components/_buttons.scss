@@ -1,0 +1,18 @@
+.btn {
+  @include make-button(2px);
+}
+
+@each $key, $val in $colors {
+  .btn-#{$key} {
+      @include generatorColorButtons($val,$val);
+  }
+  .btn-outline-#{$key} {
+      @include generatorOutlineButtons($val);
+  }
+}
+
+.btn-icon {
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+}

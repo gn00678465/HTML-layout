@@ -1,0 +1,30 @@
+.user-form {
+  height: 576px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.user {
+  max-height: 141px;
+  overflow: hidden;
+  line-height: 1;
+  transition: max-height .3s;
+  &__img {
+    width: 141px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__content {
+    flex: 1 0 0;
+  }
+  .showBtn {
+    transition: transform .3s;
+  }
+  &.open {
+    max-height: 20em;
+    .showBtn {
+      transform: rotate(180deg);
+    }
+  }
+}

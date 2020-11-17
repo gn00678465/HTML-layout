@@ -1,0 +1,23 @@
+@import './mixins/utilities';
+@import './mixins/RWD';
+@import './mixins/grid';
+@import './mixins/space';
+@import './mixins/fonts';
+@import './mixins/colors';
+@import './mixins/buttons';
+
+// CSS variable
+@mixin make-css-variables($map) {
+  $lists: map-keys($map);
+  @each $name in $lists {
+    --#{$name}: #{map-get($map, $name)};
+  }
+}
+
+// hide text
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+

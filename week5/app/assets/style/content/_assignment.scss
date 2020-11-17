@@ -1,0 +1,40 @@
+.assignment {
+  .comment {
+    color: #707070;
+  }
+  &__wrap {
+    margin-top: 6px;
+  }
+  &__list {
+    flex-basis: 320px;
+    align-self: flex-start;
+  }
+  &__item-active {
+    &:hover,
+    &.active {
+      background: var(--light);
+    }
+  }
+  &__body {
+    flex: 1 0 0;
+  }
+  &__content {
+    margin-top: 16px;
+    margin-right: 16px;
+    margin-left: 48px;
+    ul > li {
+      text-indent: 2rem;
+      list-style-type: disc;
+    }
+  }
+  div.px-4.pt-4 .assignment__content {
+    border-bottom: 1px solid #CDDDCD;
+  }
+  div.px-4.pt-4:last-child .assignment__content {
+    border: none;
+  }
+}
+
+.arrow {
+  margin-left: 7px;
+}

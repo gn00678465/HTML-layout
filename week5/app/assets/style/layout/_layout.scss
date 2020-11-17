@@ -1,0 +1,64 @@
+.sidebar {
+  flex-basis: 296px;
+  flex-shrink: 0;
+  .menu {
+    margin-top: 34px;
+  }
+  .item {
+    margin-bottom: 22px;
+  }
+  .link {
+    transition: all .3s;
+    &:hover {
+      color: var(--primary);
+    }
+  }
+  .active {
+    color: var(--primary);
+    position: relative;
+    height: 100%;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -32px;
+      bottom: 0;
+      width: 4px;
+      z-index: 2;
+      background: var(--primary);
+    }
+  }
+}
+
+.user {
+  .photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+
+.expander {
+  flex: 1 0 0;
+}
+
+.hover-primary {
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+.hover-danger {
+  &:hover {
+    color: var(--danger);
+  }
+}
+
+.hover-warning {
+  &:hover {
+    color: var(--warning);
+  }
+}

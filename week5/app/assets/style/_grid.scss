@@ -1,0 +1,26 @@
+.container {
+  @include make-container();
+}
+
+.container {
+  max-width: 920px;
+}
+
+// .example-container {
+//   width: 800px;
+//   @include make-container();
+// }
+
+.row {
+  @include make-row();
+}
+
+@each $key, $val in map-reverse($breakpoints) {
+  $infix: breakpoint-infix($key, $breakpoints);
+  @include response-degin($key) {
+    @include generatorDisplays($infix);
+    @include generatorFlexContainerProperties($infix);
+    @include generatorFlexAxisProperties($infix);
+    @include generatorColumns($infix);
+  }
+};

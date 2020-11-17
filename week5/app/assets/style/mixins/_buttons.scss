@@ -1,0 +1,78 @@
+@mixin make-button($radius: 2px) {
+  border-radius: $radius;
+  border-width: 1px;
+  border-color: transparent;
+  border-style: solid;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: inherit;
+}
+
+@mixin generatorColorButtons(
+  $background,
+  $border,
+  $color: text-contrast($background),
+  $hover-background: if($color == $text-contrast-light, shade-color($background, 15%), tint-color($background, 15%)),
+  $hover-border: if($color == $text-contrast-light, shade-color($border, 20%), tint-color($border, 10%)),
+  $hover-color: text-contrast($hover-background),
+  $active-background: if($color == $text-contrast-light, shade-color($background, 20%), tint-color($background, 20%)),
+  $active-border: if($color == $text-contrast-light, shade-color($border, 25%), tint-color($border, 10%)),
+  $active-color: text-contrast($active-background),
+  $disabled-background: $background,
+  $disabled-border: $border,
+  $disabled-color: text-contrast($disabled-background)
+) {
+  color: $color;
+  border-color: $border;
+  background: $background;
+  &:hover:not(:disabled) {
+    color: $hover-color;
+    border-color: $hover-border;
+    background: $hover-background;
+  }
+  &:active:not(:disabled) {
+    color: $active-color;
+    border-color: $active-border;
+    background: $active-background;
+  }
+  &:disabled,
+  &.disabled {
+    color: $disabled-color;
+    border-color: $disabled-border;
+    background: $disabled-background;
+    cursor: auto;
+  }
+}
+
+@mixin generatorOutlineButtons(
+$color,
+$color-hover: text-contrast($color),
+$active-background: $color,
+$active-border: $color,
+$active-color: text-contrast($active-background)
+) {
+  color: $color;
+  border-color: $color;
+  &:hover:not(:disabled) {
+    color: $color-hover;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+  &:active:not(:disabled) {
+    color: $active-color;
+    border-color: $active-border;
+    background: $active-background;
+  }
+  &:disabled,
+  &.disabled {
+    color: $color;
+    background-color: transparent;
+    cursor: auto;
+  }
+}

@@ -1,0 +1,14 @@
+@include generatorColors();
+@include generatorFontWeight();
+@include generatorFontTransform();
+@include generatorVerticalAlign();
+
+@each $key, $val in map-reverse($breakpoints) {
+  $infix: breakpoint-infix($key, $breakpoints);
+  @include response-degin($key) {
+    @include generatorFontZise($infix);
+    @include generatorTextAlign($infix);
+    @include generatorSpaces($infix);
+    @include generatorPositions($infix);
+  }
+};

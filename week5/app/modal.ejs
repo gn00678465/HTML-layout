@@ -1,0 +1,73 @@
+<div class="modal modal-overlay" id="userDataModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="font-bold text-2_lg">
+        New Admin
+      </h2>
+      <button type="button"class="material-icons" data-dismiss="modal">
+        clear
+        </button>
+    </div>
+    <div class="modal-body border-bottom pt-7">
+      <form class="user-form px-7" action="" methods="post">
+        <section class="border-bottom pb-6">
+          <p class="mb-4 text-lg font-bold">Account</p>
+          <div class="form-group mb-4">
+            <label for="name" class="d-block text-2_sm mb-1">Name</label>
+            <input id="name" type="text" class="form-control"></div>
+          <div class="form-group">
+            <label for="mail" class="d-block text-2_sm mb-1">Email</label>
+            <input id="mail" type="mail" class="form-control"></div>
+        </section>
+        <section class="border-bottom py-6" id="verification">
+          <p class="mb-5 text-lg font-bold">Verification</p>
+          <div class="form-inline verification mb-5">
+            <input type="checkbox" name="verified" id="verified" class="form-control">
+            <label for="verified" class="label">Unverified</label>
+          </div>
+          <button type="button" class="w-100 py-4 text-center btn btn-outline-primary">Send Verification Mail</button>
+        </section>
+        <section class="border-bottom py-6">
+          <p class="mb-4 text-lg font-bold">Access Level</p>
+          <select name="level" id="level" class="form-control text-black-50">
+            <option value="0" class="selected">-Choose access level-</option>
+            <option value="admin">Admin</option>
+          </select>
+        </section>
+        <section class="py-6 border-bottom">
+          <p class="mb-4 text-lg font-bold">Custom Access</p>
+          <div class="form-inline mb-4">
+            <input type="checkbox" name="lecture" id="lecture" class="checkbox">
+            <label for="lecture" class="label">Lecture</label>
+          </div>
+          <div class="form-inline mb-4">
+            <input type="checkbox" name="coupon" id="coupon" class="checkbox">
+            <label for="coupon" class="label">Coupon</label>
+          </div>
+          <div class="form-inline mb-4">
+            <input type="checkbox" name="message" id="message" class="checkbox">
+            <label for="message" class="label">Message</label>
+          </div>
+          <div class="form-inline mb-4">
+            <input type="checkbox" name="setting" id="setting" class="checkbox">
+            <label for="setting" class="label">Setting</label>
+          </div>
+          <div class="form-inline">
+            <input type="checkbox" name="task" id="task" class="checkbox">
+            <label for="task" class="label">Task menu</label>
+          </div>
+        </section>
+        <section class="section py-6 border-bottom" id="deactivate">
+          <p class="mb-4 text-lg font-bold">Deactivate Account</p>
+          <p class="text-danger mb-4"><i class="material-icons mr-2 vertical-middle">warning</i>This cannot be undone!</p>
+          <button type="button" class="py-4 w-100 text-center btn btn-outline-danger">Deactivate This Account</button>
+        </section>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn py-2 px-7 btn-outline-primary mr-4" data-dismiss="modal">Cancle</button>
+      <button type="button" class="btn py-2 px-7 btn-primary add-btn">Add</button>
+      <button type="button" class="btn py-2 px-7 btn-primary update-btn">Update</button>
+    </div>
+  </div>
+</div>

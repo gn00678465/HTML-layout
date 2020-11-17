@@ -1,0 +1,94 @@
+$gutter: 30px !default;
+$grid-count : 12 !default;
+$space-count: 5 !default;
+$rem-default-size: 16px !default;
+
+$text-contrast-dark: #000;
+$text-contrast-light: white;
+$colors: (
+  primary: #2A8356,
+  // secondary: #111619,
+  danger: #E3006E,
+  warning: #ffc107,
+  light: #EDF4EE,
+  black-50: #0000009A,
+  black: black,
+  white: white,
+) !default;
+
+$breakpoints: (
+  // 'xs': 375px,
+  // 'sm': 576px,
+  // 'md': 768px,
+  // 'lg': 992px,
+  null: false
+) !default;
+
+$spacer: 1rem !default;
+$spacies: (
+  'auto': auto,
+  '0': 0px,
+  '1': 4px,
+  '2': 8px,
+  '3': 12px,
+  '4': 16px,
+  '5': 20px,
+  '6': 24px,
+  '7': 32px,
+  '8': 40px,
+  '9': 46px,
+  '10': 56px,
+  '11': 64px
+) !default;
+
+$font-sizes: (
+  'sm': 12px,
+  '2_sm': 14px,
+  'base': 16px,
+  'lg': 20px,
+  '2_lg': 24px,
+  // '3_lg': 28px,
+  // '4_lg': 32px,
+  // 'xl': 36px,
+  // '2_xl': 48px,
+  // '3_xl': 64px
+) !default;
+
+$font-transforms: (capitalize, uppercase, lowercase, none) !default;
+
+$directions: (top, bottom, left, right, center) !default;
+
+$displays: (none, inline, block, inline-block, flex) !default;
+
+$positions: (static, relative, absolute, fixed, sticky) !default;
+
+$vertical-aligns: (top, middle, bottom, baseline, text-top, text-bottom) !default;
+
+// flex
+$flex-container-property: (
+'direction': (row, row-reverse, column, column-reverse),
+'wrap': (nowrap, wrap, wrap-reverse)
+)!default;
+
+$flex-properties: (
+  all: (
+    'start': flex-start,
+    'end': flex-end,
+    'center': center,
+    'baseline': baseline,
+    'stretch': stretch
+    ),
+	some: (
+    'around': space-around,
+    'between': space-between
+	)
+) !default;
+
+$font-weights: (
+  'thin': 100,
+  'light': 300,
+  // 'regular': 400,
+  'medium': 500,
+	'bold': 700,
+	'black': 900,
+) !default;

@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  cursor: pointer;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+html, body {
+  height: 100%;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5;
+}
+
+:root {
+  @include make-css-variables($colors);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.icon {
+  height: 1em;
+  vertical-align: middle;
+}
+
+.float-right {
+  float: right;
+}
+.clear-both {
+  clear: both;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #CDDDCD;
+  &:not(:first-child):last-child {
+    border: none;
+  }
+}
+
+.border-round {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #CDDDCD;
+}
+
+.code {
+  background: var(--light);
+  color: var(--primary);
+  font-family: 'Roboto Mono', monospace;
+}
+
+.hide-text {
+  @include hide-text;
+}

@@ -1,0 +1,13 @@
+// RWD
+@mixin response-degin($breakpoint) {
+  @if(type-of($breakpoint) == string and map-has-key($breakpoints, $breakpoint)) {
+    $point: map-get($breakpoints, $breakpoint);
+    @media (max-width: $point) {
+      @content;
+    }
+  } @else if not $breakpoint {
+    @content;
+  } @else {
+      @warn 'no search breakpoint'
+  }
+};

@@ -1,0 +1,58 @@
+
+.form-control {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #121212;
+  transition: all .3s ease-in-out;
+  width: 100%;
+  padding: 16px;
+}
+
+.form-file {
+  .label {
+    cursor: pointer;
+  }
+}
+
+.form-group {
+  .form-control {
+    &:focus,
+    &:active {
+      border-color: var(--light);
+      background: var(--light);
+    }
+  }
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .label {
+    margin-left: 8px;
+  }
+}
+
+.verification {
+  .label {
+    position: relative;
+    padding-left: 22px;
+    &::before {
+      content: '\E8B2'; // e86c
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      font-family: "Material Icons";
+      color: var(--danger);
+    }
+  }
+  .form-control {
+    display: none;
+  }
+  .form-control:checked + .label::before {
+    content: '\E86C';
+    color: var(--primary);
+  }
+}
