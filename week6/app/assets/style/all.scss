@@ -1,10 +1,20 @@
 @import 'functions';
+@import './helpers/function';
 @import './helpers/variables';
 @import 'mixins';
+@import './helpers/mixin';
 @import "root";
 @import "reboot";
 @import "grid";
+@import "transitions";
 
 @import "buttons";
+@import 'nav';
+@import "navbar";
+@import "input-group";
+@import './components/introCard';
+@import './components/card';
 
+@import "./custom";
 @import "utilities";
+@import "./helpers/utilities";

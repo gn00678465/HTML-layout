@@ -1,0 +1,5 @@
+$rem-default-size: 16px;
+
+@function px2rem($size) {
+  @return $size / $rem-default-size * 1rem;
+};

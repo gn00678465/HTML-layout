@@ -1,0 +1,55 @@
+.introCard {
+  display: block;
+  .introCard-img,
+  .introCard-content {
+    max-width: 100%;
+    width: 100%;
+  }
+  .introCard-img {
+    object-fit: cover;
+    object-position: 0% 50%;
+    &.normal {
+      height: 350px;
+    }
+    &.lg {
+      height: 680px;
+    }
+  }
+  .introCard-content {
+    padding-top: 8px;
+    padding-bottom: 32px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  @include response-degin(md) {
+    .introCard-img {
+      &.normal {
+        height: 555px;
+      }
+      &.lg {
+        height: 1080px;
+      }
+    }
+  }
+  @include response-degin(lg) {
+    display: flex;
+    flex-direction: row-reverse;
+    .introCard-img {
+      flex: 0 0 50%;
+      max-width: 50%;
+      &.normal {
+        height: 555px;
+      }
+      &.lg {
+        height: 1080px;
+      }
+    }
+    .introCard-content {
+      max-width: percentage(350/555);
+    }
+    &:nth-child(even) {
+      flex-direction: row;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@each $key, $val in $grid-breakpoints {
+  $infix: breakpoint-infix($key, $grid-breakpoints);
+  @include response-degin($key) {
+    @include generatorFontZise($infix);
+  }
+};

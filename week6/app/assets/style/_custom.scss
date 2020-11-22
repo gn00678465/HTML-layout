@@ -1,0 +1,83 @@
+body,html {
+  line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6,p, ul {
+  margin-bottom: 0;
+}
+
+ul,ol,li {
+  list-style: none;
+  padding-left: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position:center
+}
+
+.logo {
+  width: 128px;
+  height: 38px;
+  @include hide-text;
+  vertical-align: middle;
+}
+
+.logo-primary {
+  background-image: url('../images/d’Perfume.png');
+}
+
+.logo-white {
+  background-image: url('../images/d’Perfumewhite.png');
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.border-2 {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.font-weight-semibold {
+  font-weight: 600;
+}
+
+.align-items-around {
+  align-items: space-around;
+}
+
+.jumbotron {
+  height: 480px;
+  background-image: url('../images/index/index1.jpg');
+  background-position: center;
+  background-size: cover;
+  @include response-degin(lg) {
+    height: 870px;
+  }
+}
+
+.subscribe {
+  height: 600px;
+  background-image: url('../images/index/index10.jpg');
+  background-position: center;
+  background-size: cover;
+  padding-top: 312px;
+  padding-bottom: 112px;
+}
+
+.product-img {
+  width: 100%;
+  object-position: bottom;
+  height: 350px;
+  @include response-degin(lg) {
+    height: 540px;
+  }
+}
