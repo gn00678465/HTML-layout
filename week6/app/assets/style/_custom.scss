@@ -6,7 +6,7 @@ h1,h2,h3,h4,h5,h6,p, ul {
   margin-bottom: 0;
 }
 
-ul,ol,li {
+ul,ol {
   list-style: none;
   padding-left: 0;
 }
@@ -73,11 +73,25 @@ img {
   padding-bottom: 112px;
 }
 
-.product-img {
+.product-i-img {
   width: 100%;
   object-position: bottom;
   height: 350px;
   @include response-degin(lg) {
     height: 540px;
   }
+}
+
+.product-img {
+  width: 100%;
+  object-position: center;
+  height: 165px;
+  @include response-degin(md) {
+    height: 255px;
+  }
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: #8D8D8D;
 }

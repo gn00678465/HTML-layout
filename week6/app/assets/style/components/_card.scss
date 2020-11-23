@@ -1,5 +1,13 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  .card-img-top {
+    object-fit: cover;
+    object-position:center;
+    
+  }
   .card-header {
+    overflow: hidden;
     position: relative;
   }
   .card-body {
@@ -23,8 +31,4 @@
     background: rgba(0,0,0,.3);
     z-index: 10;
   }
-}
-
-.line-through {
-  text-decoration: line-through;
 }

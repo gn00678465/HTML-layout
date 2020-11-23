@@ -1,0 +1,18 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  .page {
+    font-size: 20px;
+    padding: 2px;
+    position: relative;
+    margin: 0 8px;
+    color: #000;
+    &:hover:not(.active) {
+      color: var(--primary);
+    }
+  }
+  .active {
+    color: #AC8A46;
+    border-bottom: 2px solid #AC8A46;
+  }
+}
