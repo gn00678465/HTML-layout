@@ -41,6 +41,13 @@ img {
   vertical-align: middle;
 }
 
+.absolute-right-0 {
+  @include response-degin(md) {
+    position: absolute;
+    right: 0;
+  }
+}
+
 .border-2 {
   border-width: 2px;
   border-style: solid;
@@ -103,8 +110,11 @@ img {
   height: 460px;
 }
 
-.detial-sm-img {
+.detial-img {
   height: 220px;
+  @include response-degin(md) {
+    height: 460px;
+  }
 }
 
 .login-img {
