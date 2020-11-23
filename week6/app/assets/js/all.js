@@ -6,11 +6,10 @@
     function pageHandler() {
       if(currentPath === 'product') {
         productHandler();
+      } else if(currentPath === 'login') {
+        loginHandler();
       }
     }
-
-
-
 
     function productHandler() {
       const productsList = document.querySelector('#productsList');
@@ -29,7 +28,6 @@
         let val = (value/1).toFixed(2).replace('.', ',')
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
       }
-
 
       const html = products.map((item) => {
         return `
@@ -60,6 +58,12 @@
       productsList.innerHTML = html
     }
 
+    function loginHandler() {
+      const loginBtn = document.querySelector('#loginBtn');
+      loginBtn.addEventListener('click', function() {
+        location.href = '/member.html'
+      })
+    };
 
 
 
