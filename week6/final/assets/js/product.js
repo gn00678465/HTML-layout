@@ -19,7 +19,7 @@
 
   const html = products.map((item) => {
     return `
-    <div class="col-6 col-md-4 col-lg-3 mb-15">
+    <li class="col-6 col-md-4 col-lg-3 mb-15">
       <div class="card">
         <div class="card-header">
           <img src="${item.imgPath}" alt="" class="product-img">
@@ -39,7 +39,7 @@
           </a>
         </div>
       </div>
-    </div>
+    </li>
     `
   }).join("");
 
