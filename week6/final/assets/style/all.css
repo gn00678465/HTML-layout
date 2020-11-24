@@ -3376,57 +3376,6 @@ textarea.form-control {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
-.introCard {
-  display: block; }
-  .introCard .introCard-img,
-  .introCard .introCard-content {
-    max-width: 100%;
-    width: 100%; }
-  .introCard .introCard-img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: 0% 50%;
-       object-position: 0% 50%; }
-    .introCard .introCard-img.normal {
-      height: 350px; }
-    .introCard .introCard-img.lg {
-      height: 680px; }
-  .introCard .introCard-content {
-    padding-top: 8px;
-    padding-bottom: 32px; }
-  .introCard a:hover {
-    text-decoration: none; }
-  @media (min-width: 768px) {
-    .introCard .introCard-img.normal {
-      height: 555px; }
-    .introCard .introCard-img.lg {
-      height: 1080px; } }
-  @media (min-width: 992px) {
-    .introCard {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: reverse;
-          -ms-flex-direction: row-reverse;
-              flex-direction: row-reverse; }
-      .introCard .introCard-img {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 50%;
-                flex: 0 0 50%;
-        max-width: 50%; }
-        .introCard .introCard-img.normal {
-          height: 555px; }
-        .introCard .introCard-img.lg {
-          height: 1080px; }
-      .introCard .introCard-content {
-        max-width: 63.06306%; }
-      .introCard:nth-child(even) {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row; } }
-
 .card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3489,7 +3438,7 @@ textarea.form-control {
 body, html {
   line-height: 1.5; }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+h1, h2, h3, h4, h5, h6, p, ul, dl {
   margin-bottom: 0; }
 
 ul, ol {
@@ -3524,6 +3473,11 @@ img {
 .vertical-middle {
   vertical-align: middle; }
 
+@media (min-width: 768px) {
+  .absolute-right-0 {
+    position: absolute;
+    right: 0; } }
+
 .border-2 {
   border-width: 2px;
   border-style: solid; }
@@ -3547,6 +3501,25 @@ img {
   @media (min-width: 992px) {
     .jumbotron {
       height: 870px; } }
+
+.intro-img {
+  width: 100%; }
+  .intro-img.normal {
+    height: 350px; }
+  .intro-img.lg {
+    height: 680px; }
+
+.intro-content {
+  padding-top: 8px;
+  padding-bottom: 32px; }
+
+@media (min-width: 992px) {
+  .intro-img.normal {
+    height: 555px; }
+  .intro-img.lg {
+    height: 1080px; }
+  .intro-content {
+    max-width: 63.06306%; } }
 
 .subscribe {
   height: 600px;
@@ -3580,8 +3553,11 @@ img {
 .detial-md-img {
   height: 460px; }
 
-.detial-sm-img {
+.detial-img {
   height: 220px; }
+  @media (min-width: 768px) {
+    .detial-img {
+      height: 460px; } }
 
 .login-img {
   width: 100%;

@@ -2,7 +2,7 @@ body,html {
   line-height: 1.5;
 }
 
-h1,h2,h3,h4,h5,h6,p, ul {
+h1,h2,h3,h4,h5,h6,p, ul, dl {
   margin-bottom: 0;
 }
 
@@ -72,6 +72,35 @@ img {
   background-size: cover;
   @include response-degin(lg) {
     height: 870px;
+  }
+}
+
+.intro {
+  &-img {
+    width: 100%;
+    &.normal {
+      height: 350px;
+    }
+    &.lg {
+      height: 680px;
+    }
+  }
+  &-content {
+    padding-top: 8px;
+    padding-bottom: 32px;
+  }
+  @include response-degin(lg) {
+    &-img {
+      &.normal {
+        height: 555px;
+      }
+      &.lg {
+        height: 1080px;
+      }
+    }
+    &-content {
+      max-width: percentage(350/555);
+    }
   }
 }
 
