@@ -141,29 +141,10 @@ $enable-deprecation-messages:                 true !default;
 $spacer: 1rem !default;
 $spacers: () !default;
 $spacers: map-merge(
-  (
-    0: 0,
-    // 1: ($spacer * .25),
-    // 2: ($spacer * .5),
-    // 3: $spacer,
-    // 4: ($spacer * 1.5),
-    // 5: ($spacer * 3)
-    1: 4px,
-    2: 8px,
-    3: 12px,
-    4: 16px,
-    5: 20px,
-    6: 24px,
-    7: 28px,
-    8: 32px,
-    9: 36px,
-    10: 40px,
-    15: 60px,
-    20: 80px,
-    'gutter': 30px,
-  ),
-  $spacers
+    make-spacer-map(),
+    $spacers
 );
+$spacers: map-merge($spacers, (15: 60px, 20: 80px, 'gutter': 30px));
 
 // font-sizes
 $font-size: 1rem !default;
