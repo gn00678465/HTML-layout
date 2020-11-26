@@ -1,0 +1,2 @@
+"use strict";!function(){var t={addCart:"已加入購物車",addFavorite:"已加入我的收藏"};$('[data-target="#showModal"]').on("click",function(){var d=this.dataset.text,o=$("#showModal"),a=o.find(".modal-dialog"),o=o.find(".modal-body > p");576<window.innerWidth||a.addClass("modal-sm"),o.text(t[d])}),$("#showModal").on("shown.bs.modal",function(){var d=$("#showModal"),o=d.find(".modal-dialog"),a=d.find(".modal-body > p"),t=o.hasClass("modal-sm");window.setTimeout(function(){t&&o.removeClass("modal-sm"),a.text=null,d.modal("hide")},1e3)})}($);
+//# sourceMappingURL=detial.js.map

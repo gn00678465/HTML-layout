@@ -48,6 +48,11 @@ img {
   }
 }
 
+.absolute-top-center {
+  top: 0;
+  left: 50%;
+}
+
 .border-2 {
   border-width: 2px;
   border-style: solid;
@@ -102,6 +107,11 @@ img {
       max-width: percentage(350/555);
     }
   }
+}
+
+.modal-sm {
+  margin: auto;
+  max-width: 300px;
 }
 
 .subscribe {

@@ -71,7 +71,7 @@ export function babel() {
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.babel())
-    .pipe($.concat("all.js"))
+    // .pipe($.concat("all.js"))
     .pipe($.if(isProduct, $.uglify()))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./dist/assets/js'))

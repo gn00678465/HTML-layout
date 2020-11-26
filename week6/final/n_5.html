@@ -16,6 +16,9 @@
   <nav class="navbar bg-white sticky-top shadow-sm navbar-expand-lg navbar-light px-5 px-lg-0">
   <div class="container">
     <a class="logo logo-primary" href="./index.html">Navbar</a>
+    <a class="btn ml-auto text-secondary position-relative d-inline-block d-lg-none">
+      <span class="material-icons mr-1 vertical-middle">shopping_cart</span>
+      <span class="badge badge-pill badge-primary position-absolute absolute-top-center">3</span></a>
     <button class="navbar-toggler p-0 border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="material-icons text-2_xl">menu</span>
     </button>
@@ -80,10 +83,10 @@
       <div class="input-group mb-2">
         <input type="number" class="form-control p-4 h-auto border border-primary rounded-left" value="1">
         <div class="input-group-append flex-fill">
-          <button class="btn btn-primary w-100" type="button">加入購物車</button>
+          <button class="btn btn-primary w-100" type="button" data-toggle="modal" data-target="#showModal" data-text="addCart">加入購物車</button>
         </div>
       </div>
-      <a href="" class="mb-10 mb-lg-20 d-inline-block"><span class="material-icons vertical-middle">favorite</span><span class="text-black">加入我的收藏</span></a>
+      <a href="" class="mb-10 mb-lg-20 d-inline-block" data-toggle="modal" data-target="#showModal" data-text="addFavorite"><span class="material-icons vertical-middle">favorite</span><span class="text-black">加入我的收藏</span></a>
       <ul>
         <li class="font-weight-medium mb-5">
           商品購買須知
@@ -101,7 +104,18 @@
       <div class="row">
         <img src="./assets/images/n_5/img-2.jpg" alt="" class="col-md-6 detial-xl-img mb-4 mb-md-gutter">
         <img src="./assets/images/n_5/img-3.jpg" alt="" class="col-md-6 detial-xl-img mb-4 mb-md-gutter">
-        <img src="./assets/images/n_5/img-1.jpg" alt="" class="detial-md-img">
+        <img src="./assets/images/n_5/img-1.jpg" alt="" class="col detial-md-img">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p class="text-lg text-center text-primary font-weight-semibold">
+        </p>
       </div>
     </div>
   </div>
@@ -126,7 +140,9 @@
     </ul>
   </div>
 </footer>  <script src="./assets/js/vendors.js"></script>
-  <script src="./assets/js/all.js"></script>
+  
+  <script src="./assets/js/detial.js"></script>
+  
 </body>
 
 </html>
