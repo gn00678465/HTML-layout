@@ -6,24 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>首頁</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@1,700;1,900&family=Roboto&display=swap');
+  </style>
   <link rel="stylesheet" href="./assets/style/all.css">
 </head>
 
 <body>
-  <header class="header">
-    這是 header
-  </header>
-
+  <nav class="navbar navbar-expand-lg navbar-light py-0 px-2 border-bottom border-primary">
+  <a class="navbar-brand ml-2" href="#">
+    <h1 class="logo">Fixie</h1>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav font-weight-bold">
+      <li class="nav-item active">
+        <a class="nav-link px-2 py-3" href="#">Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-2 py-3" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-2 py-3" href="#">contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
   
-<h1>
-  這是一段話
-</h1>
+<div class="banner">
+  <div class="container h-100 d-flex flex-column justify-content-center">
+    <h2 class="text-2xl font-italic font-weight-black mb-2">Single Speed,<br />Single Life.</h2>
+    <h3 class="text-md mb-2">More recently the “fixie” has become a popular<br />alternative among mainly urban cyclists, offering the<br />advantage of simplicity compared with the standard<br />multi-geared bicycle.</h3>
+  </div>
+  <img src="./assets/images/index.jpeg" alt="" class="position-absolute banner-img w-50">
+</div>
 
-<div class="box"></div>
+<div class="row no-gutters">
+  <img src="./assets/images/index.jpeg" class="col-6 image-fluid" alt="">
+  <div class="col-6 p-5 d-flex flex-column justify-content-between">
+    <p class="w-75 text-secondary">A fixed gear drivetrain is more mechanically efficient than any other bicycle drivetrain, with the most direct power transfer from rider to the wheels. Thus, it requires less energy in any given gear to move than a geared bike in the same gear.</p>
+    <h2 class="text-right text-xl font-italic font-weight-black mb-5 mt-auto">One Gear,<br /><span class="mt-2">Many Variations</span></h2>
+  </div>
+</div>
+<div class="row flex-row-reverse no-gutters">
+  <img src="./assets/images/index.jpeg" class="col-6 image-fluid" alt="">
+  <div class="col-6 p-5 d-flex flex-column-reverse justify-content-between">
+    <p class="w-75 text-secondary text-right align-self-end">Without the added parts required for a fully geared drive train—derailleurs, shifters, cables, cable carriers, multiple chain rings, freewheel hub, brazed-on mounting lugs—a fixed gear bicycle weighs less than its geared equivalent.</p>
+    <h2 class="text-xl font-italic font-weight-black mt-5 mb-auto">Stripped-Down<br /><span class="mt-2">Performance</span></h2>
+  </div>
+</div>
 
-  <footer class="footer">
-    footer
-  </footer>
+  <footer class="container bg-light p-2">
+  <div class="d-flex align-items-center justify-content-between">
+    <ul class="list-unstyled d-flex">
+      <li class=""><a href="" class="font-weight-bold p-2">Product</a></li>
+      <li class=""><a href="" class="font-weight-bold p-2">Blog</a></li>
+      <li class=""><a href="" class="font-weight-bold p-2">contact</a></li>
+    </ul>
+    <p class="text-secondary text-sm">© 2020 Fixie. All Rights Reserved.</p>
+    <a href="" class="logo mr-2"></a>
+  </div>
+</footer>
   <script src="./assets/js/vendors.js"></script>
   <script src="./assets/js/all.js"></script>
 </body>

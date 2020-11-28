@@ -1,0 +1,17 @@
+$rem-default-size: 16px;
+
+@function px2rem($size) {
+  @return $size / $rem-default-size * 1rem;
+};
+
+@function make-spacer-map($spacer: 4px, $count: 10) {
+  $map: ();
+  @for $i from 0 through $count {
+    @if ($i == 0) {
+      $map: map-merge($map, ($i: $i * 0))
+    } @else {
+      $map: map-merge($map, ($i: $i * $spacer))
+    }
+  }
+  @return $map;
+}

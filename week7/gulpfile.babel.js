@@ -47,7 +47,7 @@ export function scss() {
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.sass({
-      // includePaths: ["./node_modules/bootstrap/scss"]
+      includePaths: ["./node_modules/bootstrap/scss"]
     }).on("error", $.sass.logError))
     .pipe($.postcss([autoprefixer()]))
     .pipe($.if(isProduct, $.cleanCss()))
