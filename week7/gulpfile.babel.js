@@ -60,7 +60,7 @@ export function scss() {
 export function venderJS() {
   return gulp.src([
     "./node_modules/jquery/dist/jquery.min.js",
-    // "./node_modules/bootstrap/dist/js/bootstrap.js"
+    "./node_modules/bootstrap/dist/js/bootstrap.js"
     ])
     .pipe($.concat("vendors.js"))
     .pipe(gulp.dest("./dist/assets/js"))

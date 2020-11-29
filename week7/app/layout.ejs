@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%- title %></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Merriweather:ital,wght@1,900&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/all.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title><%- title %></title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@1,700;1,900&family=Roboto&display=swap');
-  </style>
-  <link rel="stylesheet" href="./assets/style/all.css">
-</head>
+  <body>
+    <%- include('layout/navbar.ejs') -%>
 
-<body>
-  <%- include('layout/navbar.ejs') -%>
+    <%- contents %>
 
-  <%- contents %>
+    <%- include('layout/footer.ejs') -%>
 
-  <%- include('layout/footer.ejs') -%>
-
-  <script src="./assets/js/vendors.js"></script>
-  <script src="./assets/js/all.js"></script>
-</body>
-
+    <script src="./assets/js/vendors.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/js/all.js"></script>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 html, body {
-  font-style: normal;
+  overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6,p,ul {
@@ -10,18 +10,39 @@ a:hover {
   text-decoration: none;
 }
 
+.vertical-middle {
+  vertical-align: middle;
+}
+
 .font-weight-black {
   font-weight: 900;
 }
 
-.font-italic {
+.font-family-Merri {
   font-family: "Merriweather";
 }
 
 .image-fluid {
-  max-width: 50%;
+  max-width: 100%;
   height: var(--index-image-height);
   object-fit: cover;
+}
+
+.absolute-left-center {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.absolute-right-center {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+.absolute-right-top {
+  top: 0;
+  right: 0;
 }
 
 .logo {
@@ -35,9 +56,22 @@ a:hover {
 
 .banner {
   height: 864px;
-  position: relative;
-  &-img {
-    right: 0;
-    top: 0;
-  }
+}
+
+.premium {
+  height: 640px;
+  padding: 77px 0;
+  background-image: url('./../images/img4.jpg');
+  background-position-x: center;
+  background-position-y: 15%;
+  background-size: cover;
+}
+
+.card-header {
+  @include aspect-ratio(3, 4);
+  overflow: hidden;
+}
+
+.z-100 {
+  z-index: 100;
 }

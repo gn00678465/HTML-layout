@@ -1,0 +1,10 @@
+.btn-groups {
+  display: flex;
+  .btn {
+    border-radius: 0;
+  }
+  .btn:not(:last-child),
+  .btn:not(:last-of-type) {
+    border-right: none;
+  }
+}
