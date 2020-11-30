@@ -49,8 +49,8 @@ function parallelText() {
     if(scrollTop > offsetTop && scrollTop <  offsetBottom) {
       const $img = $this.find('[data-parallel="img"] img');
       const $texts = $this.find('[data-parallel="text"] h2 p');
-      const imgRate = calcRato(scrollTop - offsetTop, $this.height(), 50);
-      const textRate = calcRato(scrollTop - offsetTop, $this.height(), 20);
+      const imgRate = calcRato(scrollTop - offsetTop, $this.height(), 130);
+      const textRate = calcRato(scrollTop - offsetTop, $this.height(), 70);
       $img.css('transform', `translateX(${calcDirection(index) * imgRate}px)`);
       // $text['0'].css('transform', `translateX(${calcDirection(index) * textRate}px)`);
       $texts.each(function(pIndex) {

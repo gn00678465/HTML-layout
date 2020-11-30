@@ -65,6 +65,8 @@ a:hover {
   background-position-x: center;
   background-position-y: 15%;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .card-header {
